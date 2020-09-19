@@ -1,17 +1,25 @@
-package tp;
+package tp; 
 
 public class Jugador {
 
-	String nombre;
-	//foto
-	String pieza;
+    private String nombre;
+    //foto
+    private String pieza;
 
-	public Jugador(String nombre, String pieza) {
-		this.nombre = nombre;
-		this.pieza = pieza;
-	}
-	
-	
-	
-	
+    public Jugador(String nombre, String pieza) {
+        this.nombre = nombre;
+        this.pieza = pieza;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getPieza() {
+        return pieza;
+    }
+
+
+
+
 }
