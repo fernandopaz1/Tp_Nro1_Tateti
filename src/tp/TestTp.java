@@ -23,6 +23,22 @@ public class TestTp {
 	}
 
 	@Test
+	public void testEstaOcupado() {
+		
+		assertTrue(tablero.estaOcupado(3, 3));  //Fuera del tablero podemos pensar que esta ocupado?
+		
+		assertFalse(tablero.estaOcupado(1,1));  //se crea vacio (no se si poner todos)
+
+		tablero.agregar(1, 1, jugador2);
+		assertTrue(tablero.estaOcupado(1,1));
+
+		tablero.agregar(1, 1, jugador1);
+		assertEquals(tablero.tablero[1][1], "O");   //No sobreescribe donde ya hay pieza
+	}
+	
+	
+	
+	@Test
 	public void testAgregar() {
 		tablero.agregar(0, 0, jugador1);
 		assertEquals(tablero.tablero[0][0], "X");
@@ -31,8 +47,9 @@ public class TestTp {
 		assertEquals(tablero.tablero[1][1], "O");
 
 		tablero.agregar(1, 1, jugador1);
-		assertEquals(tablero.tablero[1][1], "O");   //No juega donde ya hay pieza
+		assertEquals(tablero.tablero[1][1], "O");   //No sobreescribe donde ya hay pieza
 	}
+	
 	
 
 }
