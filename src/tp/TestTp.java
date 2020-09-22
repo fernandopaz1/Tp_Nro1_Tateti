@@ -59,21 +59,21 @@ public class TestTp {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals(tablero.hayGanador(), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 		tablero.vaciar();
 		
 		tablero.agregar(0, 1, jugador2);
 		tablero.agregar(0, 2, jugador2);
 		tablero.agregar(0, 3, jugador2);
-		assertEquals(tablero.hayGanador(), "O"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.hayGanador(jugador1), "O"); // cambiar nombre de hayGanador() parece booleano
 		
 		tablero.vaciar();
 		
 		tablero.agregar(1, 1, jugador2);
 		tablero.agregar(1, 2, jugador2);
 		tablero.agregar(1, 3, jugador2);
-		assertEquals(tablero.hayGanador(), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 		
 		tablero.vaciar();
 	}
