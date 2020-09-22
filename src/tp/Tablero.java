@@ -12,7 +12,7 @@ public class Tablero {
     }
 
     public boolean estaOcupado(int posicion1, int posicion2) {
-        if (tablero[posicion1][posicion2].equals("x") ||  tablero[posicion1][posicion2].equals("o")) {
+        if (tablero[posicion1][posicion2].equals("X") ||  tablero[posicion1][posicion2].equals("O")) {
             return true;
                     }
         return false;
@@ -52,9 +52,9 @@ public class Tablero {
 		}
 		
 		if ( resultado1 == true || resultado2 == true || resultado3 == true) {
-			return "El ganador es " + jugador.getPieza() ;
+			return jugador.getPieza() ;
 		}
-		return "no hay ganador";
+		return " ";
 		
 	}
 
