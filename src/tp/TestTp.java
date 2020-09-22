@@ -37,10 +37,9 @@ public class TestTp {
 	public void testEstaOcupado() {
 
 	
-	//	assertFalse(tablero.estaOcupado(1, 1)); // se crea vacio (no se si poner todos)
 
 		tablero.agregar(1, 1, jugador2);
-		assertFalse(tablero.estaOcupado(1, 1)); // ocupo una posicion y debe devolver true
+		assertTrue(tablero.estaOcupado(1, 1)); // ocupo una posicion y debe devolver true
 
 		tablero.agregar(1, 1, jugador1);
 		assertTrue(tablero.estaOcupado(1, 1)); // sigue estando ocupado si tratan de jugar en la posicion misma
@@ -62,14 +61,21 @@ public class TestTp {
 	public void vaciar() {
 		//pendiente
 	}
-	
-	
+
 	@Test
-	public void testHayGanador() {
+	public void testHayGanadorDiagonalIzquierda() {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals("X", tablero.hayGanador(jugador1)); // cambiar nombre de hayGanador() parece booleano
+	}
+	
+	@Test
+	public void testHayGanador() {
+//		tablero.agregar(0, 0, jugador1);
+//		tablero.agregar(1, 1, jugador1);
+//		tablero.agregar(2, 2, jugador1);
+//		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 		tablero.vaciar();
 		
