@@ -11,8 +11,18 @@ public class Tablero {
                                 // pq se me hace q queda feo hacer un new tablero y tener q ponerle las dimensiones 
     }
 
+    private void indiceEnRango(int i) {
+    	if(i<0)
+    		throw new IllegalArgumentException("No se permiten indices negativos: "+i);
+    	if(i>=3)
+    		throw new IllegalArgumentException("Indice fuera de rango: "+i);
+    		
+    } 
+    
     public boolean estaOcupado(int posicion1, int posicion2) {
-        if (tablero[posicion1][posicion2].equals("X") ||  tablero[posicion1][posicion2].equals("O")) {
+    	indiceEnRango(posicion1);
+    	indiceEnRango(posicion2);
+        if (tablero[posicion1][posicion2]!=null) {
             return true;
                     }
         return false;

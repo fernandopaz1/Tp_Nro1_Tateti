@@ -22,11 +22,21 @@ public class TestTp {
 
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testEstaOcupadoFueraDelTablero() {
+
+		tablero.estaOcupado(3, 3); // Fuera del tablero podemos pensar que esta ocupado?
+	}
+
+	@Test
+	public void testNoEstaOcupado() {
+		assertFalse(tablero.estaOcupado(1, 1)); // se crea vacio (no se si poner todos)
+	}
+	
 	@Test
 	public void testEstaOcupado() {
 
-		//assertTrue(tablero.estaOcupado(3, 3)); // Fuera del tablero podemos pensar que esta ocupado?
-
+	
 	//	assertFalse(tablero.estaOcupado(1, 1)); // se crea vacio (no se si poner todos)
 
 		tablero.agregar(1, 1, jugador2);
