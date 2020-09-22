@@ -25,8 +25,42 @@ public class Tablero {
         }
 
 
-    public String hayGanador () {
-        return "x";
+    public String hayGanador (Jugador jugador) {                             // ---------------------> lo malo del algoritmo es q tiene muchos for :frowning: pero casi nada de if
+        String ficha1 = jugador.getPieza();                                    //                      pq los otros q vi estan llenos de if. 
+
+        boolean resultado1 = false ;
+        boolean resultado2 = false;
+        boolean resultado3 = false;
+
+        //recorro todas las columnas
+        for (int i = 0; i <3; i ++) {
+            if ( ficha1.equals(tablero[0] [i])) {
+                resultado1 = true;
+            }
+            resultado1 = false;
+        }
+        // recorro todas las filas
+        for (int j = 0; j <3; j ++ ) {
+            if ( ficha1.equals(tablero[j] [0])) {
+                resultado2 = true;
+            }
+            resultado2 = false;
+        }
+        // recorro la diagonal (0,0) (1,1) (2, 2) 
+        for (int k = 0; k <3; k ++ ) {
+            if ( ficha1.equals(tablero[k] [k])) {
+                resultado3 = true;
+            }
+            resultado3 = false;
+        }
+
+        // falta verificar la otra diagonal
+
+        if ( resultado1 == true | resultado2 == true | resultado3 == true) {
+            return "El ganador es " + jugador.getPieza() ;
+        }
+        return "no hay ganador";
+
     }
 
     public void vaciar(){
