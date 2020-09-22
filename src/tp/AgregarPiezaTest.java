@@ -8,7 +8,7 @@ import org.junit.Test;
 import tp.Tablero;
 import tp.Jugador;
 
-public class TestTp {
+public class AgregarPiezaTest {
 
 	Tablero tablero;
 	Jugador jugador1;
@@ -60,38 +60,6 @@ public class TestTp {
 	@Test
 	public void vaciar() {
 		//pendiente
-	}
-
-	@Test
-	public void testHayGanadorDiagonalIzquierda() {
-		tablero.agregar(0, 0, jugador1);
-		tablero.agregar(1, 1, jugador1);
-		tablero.agregar(2, 2, jugador1);
-		assertEquals("X", tablero.hayGanador(jugador1)); // cambiar nombre de hayGanador() parece booleano
-	}
-	
-	@Test
-	public void testHayGanador() {
-//		tablero.agregar(0, 0, jugador1);
-//		tablero.agregar(1, 1, jugador1);
-//		tablero.agregar(2, 2, jugador1);
-//		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
-
-		tablero.vaciar();
-		
-		tablero.agregar(0, 0, jugador2);
-		tablero.agregar(0, 1, jugador2);
-		tablero.agregar(0, 2, jugador2);
-		assertEquals(tablero.hayGanador(jugador1), "O"); // cambiar nombre de hayGanador() parece booleano
-		
-		tablero.vaciar();
-		
-		tablero.agregar(1, 0, jugador2);
-		tablero.agregar(1, 1, jugador2);
-		tablero.agregar(1, 2, jugador2);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
-		
-		tablero.vaciar();
 	}
 
 }
