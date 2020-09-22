@@ -25,6 +25,7 @@ public class Tablero {
         }
 
 
+
     public String hayGanador (Jugador jugador) { 							// ---------------------> lo malo del algoritmo es q tiene muchos for :( pero casi nada de if  
 		String ficha1 = jugador.getPieza();									//  					pq los otros q vi estan llenos de if. 
 		
@@ -65,6 +66,9 @@ public class Tablero {
 		resultado = false;
 		return resultado;
 	}
+
+  
+
 
     public void vaciar(){
         tablero = new String [3] [3];
