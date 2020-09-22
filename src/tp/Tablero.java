@@ -25,9 +25,46 @@ public class Tablero {
         }
 
 
-    public String hayGanador () {
-        return "x";
-    }
+    public String hayGanador (Jugador jugador) { 							// ---------------------> lo malo del algoritmo es q tiene muchos for :( pero casi nada de if  
+		String ficha1 = jugador.getPieza();									//  					pq los otros q vi estan llenos de if. 
+		
+		boolean resultado1 = true ;
+		boolean resultado2 = true;
+		boolean resultado3 = true;
+		boolean resultado4 = true;
+		boolean resultado5 = true;
+		boolean resultado6 = true;
+		boolean resultado7 = true;
+		boolean resultado8 = true;
+		
+		for (int j = 0; j <3; j ++ ) {
+			resultado1 = resultado1 && esGanador(ficha1, j,0);      
+			resultado2 = resultado2  && esGanador(ficha1, 0, j); 	 
+			resultado3= resultado3 && esGanador(ficha1,j,j);
+			resultado4 = resultado4 && esGanador(ficha1, j, 1);
+			resultado5 = resultado5 && esGanador(ficha1, j, 2);
+			resultado6 = resultado6 && esGanador(ficha1, 1, j);
+			resultado7 = resultado7 && esGanador(ficha1, 2, j);
+			resultado8 = resultado8 && esGanador(ficha1, j, 2-j);
+			
+			
+		}
+		
+		if ( resultado1 == true || resultado2 == true || resultado3 == true) {
+			return "El ganador es " + jugador.getPieza() ;
+		}
+		return "no hay ganador";
+		
+	}
+
+	public boolean esGanador(String ficha1, int i, int j ) {
+		boolean resultado;
+		if ( ficha1.equals(tablero[i] [j])) {
+			resultado = true;
+		}
+		resultado = false;
+		return resultado;
+	}
 
     public void vaciar(){
         tablero = new String [3] [3];
