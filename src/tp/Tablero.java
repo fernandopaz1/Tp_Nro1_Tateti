@@ -94,4 +94,8 @@ public class Tablero {
 		tablero = new String[3][3];
 		return;
 	}
+	
+	public void hayEmpate() {
+		return;
+	}
 }

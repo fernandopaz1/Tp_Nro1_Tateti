@@ -114,5 +114,58 @@ public class HayGanadorTest {
 	}
 	
 	// Mover a clase hayaGanadorToroidalTest
+	
+	@Test
+	public void testDiagonalIzquierda () {
+		
+		tablero.agregar(0, 0, jugador1);
+		tablero.agregar(1, 2, jugador1);
+		tablero.agregar(2, 1, jugador1);
+		
+		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+	}
+	
+	@Test
+	public void testDiagonalDerecha () {
+		
+		tablero.agregar(0, 2, jugador1);
+		tablero.agregar(1, 0, jugador1);
+		tablero.agregar(2, 1, jugador1);
+		
+		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+	}
+	
+	
+	@Test
+	public void testMedioIzquierda () {
+		
+		tablero.agregar(0, 1, jugador1);
+		tablero.agregar(1, 2, jugador1);
+		tablero.agregar(2, 0, jugador1);
+		
+		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+	}
+	
+	@Test
+	public void testMedioDerecha () {
+		
+		tablero.agregar(0, 1, jugador1);
+		tablero.agregar(1, 0, jugador1);
+		tablero.agregar(2, 2, jugador1);
+		
+		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+	}
+	
+	@Test
+	public void testNoHayGanador2() { // borrar ese "2" del nombre feo 
+		
+		tablero.agregar(1, 1, jugador1);
+		tablero.agregar(1, 0, jugador1);
+		tablero.agregar(2, 2, jugador1);
+		
+		assertEquals("No hay ganador", tablero.hayGanador(jugador1));
+	}
+	
+	
 
 }
