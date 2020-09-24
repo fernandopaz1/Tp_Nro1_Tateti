@@ -32,7 +32,7 @@ public class Tablero {
 	public void agregar(int posicion1, int posicion2, Jugador jugador) { // la posicion tiene q ser un par de numeros pq
 																			// tengo q comparar la fila y la columna POR
 																			// AHORA
-		if (estaOcupado(posicion1, posicion2) == false) {
+		if (!estaOcupado(posicion1, posicion2)) {
 			tablero[posicion1][posicion2] = jugador.getPieza();
 		}
 	}
@@ -69,8 +69,8 @@ public class Tablero {
 		return resultado;
 	}
 
-	public String hayGanador(Jugador jugador) { // ---------------------> lo malo del algoritmo es q tiene muchos for :(
-												// pero casi nada de if
+	public String hayGanador(Jugador jugador) { 
+
 		boolean result = false;
 		for (int i = 0; i < 3; i++) {
 			result = result || esGanadorEnLaFila(i, jugador);
@@ -96,6 +96,6 @@ public class Tablero {
 	}
 	
 	public void hayEmpate() {
-		return;
+		throw new UnsupportedOperationException("No implementada todavia");
 	}
 }

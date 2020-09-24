@@ -157,8 +157,7 @@ public class HayGanadorTest {
 	}
 	
 	@Test
-	public void testNoHayGanador2() { // borrar ese "2" del nombre feo 
-		
+	public void testNoHayGanadorToroidal() {
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
