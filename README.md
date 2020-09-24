@@ -6,8 +6,8 @@
 
 - [x] Implementar Clase Tablero
 - [x] Testear como se agregan piezas
-- [ ] Implementar soluciones toroidales
-- [ ] Testear soluciones
+- [x] Implementar soluciones toroidales
+- [x] Testear soluciones
 - [ ] Implementar clase Juego
 - [x] Establecer una interface visual
 - [ ] Comunicar la interface con el código de negocio

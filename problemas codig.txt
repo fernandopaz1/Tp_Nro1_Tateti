@@ -1,0 +1,11 @@
+PROBLEMAS :
+
+1) Recorrer una matriz va a ser o(n2) :( 
+2) ¿ Como agrego cosas a la matriz ? porq lo q conozco es agregar con enteros
+con el string medio q se me complica, de ultima para no complicarnos podemos en vez
+de poner x y o podemos usar el 1 y el 0 para diferenciar las piezas :)
+
+no se como hacer la diagonal derecha :( 
+
+preg pq se rompe el codigo cuando se agrega una clase nueva y hago un pull desde la consolita de git y por que no puedo 
+crear nuevas clases. 
