@@ -42,48 +42,47 @@ public class Tablero {
 		for (int j = 0; j < 3; j++) {
 			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), i, j);
 		}
-		return true;
+		return resultado;
 	}
-	
+
 	private boolean esGanadorEnLaColumna(int i, Jugador jugador) {
 		boolean resultado = true;
 		for (int j = 0; j < 3; j++) {
 			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), j, i);
 		}
-		return true;
+		return resultado;
 	}
-	
+
 	private boolean esGanadorEnLaDiagonaIzquierda(Jugador jugador, int despl) {
 		boolean resultado = true;
 		for (int j = 0; j < 3; j++) {
-			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), (j+despl)%3, j);
+			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), (j + despl) % 3, j);
 		}
-		return true;
+		return resultado;
 	}
 
 	private boolean esGanadorEnLaDiagonaDerecha(Jugador jugador, int despl) {
 		boolean resultado = true;
 		for (int j = 0; j < 3; j++) {
-			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), (j+despl)%3, 2-j);
+			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), (j + despl) % 3, 2 - j);
 		}
-		return true;
+		return resultado;
 	}
 
 	public String hayGanador(Jugador jugador) { // ---------------------> lo malo del algoritmo es q tiene muchos for :(
 												// pero casi nada de if
-
-		boolean result=false;
-		for(int i=0;i<3;i++) {
-			result = result || esGanadorEnLaFila(i,jugador);
-			result = result || esGanadorEnLaColumna(i,jugador);
-			result = result || esGanadorEnLaDiagonaIzquierda(jugador,i);
-			result = result || esGanadorEnLaDiagonaDerecha(jugador,i);
+		boolean result = false;
+		for (int i = 0; i < 3; i++) {
+			result = result || esGanadorEnLaFila(i, jugador);
+			result = result || esGanadorEnLaColumna(i, jugador);
+			result = result || esGanadorEnLaDiagonaIzquierda(jugador, i);
+			result = result || esGanadorEnLaDiagonaDerecha(jugador, i);
 		}
-		
+
 		if (result) {
 			return jugador.getPieza();
 		}
-		return "";
+		return "No hay ganador";
 
 	}
 

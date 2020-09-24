@@ -32,11 +32,9 @@ public class AgregarPiezaTest {
 	public void testNoEstaOcupado() {
 		assertFalse(tablero.estaOcupado(1, 1)); // se crea vacio (no se si poner todos)
 	}
-	
+
 	@Test
 	public void testEstaOcupado() {
-
-	
 
 		tablero.agregar(1, 1, jugador2);
 		assertTrue(tablero.estaOcupado(1, 1)); // ocupo una posicion y debe devolver true
@@ -59,7 +57,7 @@ public class AgregarPiezaTest {
 
 	@Test
 	public void vaciar() {
-		//pendiente
+		// pendiente
 	}
 
 }
