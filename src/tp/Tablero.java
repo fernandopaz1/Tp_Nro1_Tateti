@@ -37,46 +37,58 @@ public class Tablero {
 		}
 	}
 
+	private boolean esGanadorEnLaFila(int i, Jugador jugador) {
+		boolean resultado = true;
+		for (int j = 0; j < 3; j++) {
+			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), i, j);
+		}
+		return true;
+	}
+	
+	private boolean esGanadorEnLaColumna(int i, Jugador jugador) {
+		boolean resultado = true;
+		for (int j = 0; j < 3; j++) {
+			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), j, i);
+		}
+		return true;
+	}
+	
+	private boolean esGanadorEnLaDiagonaIzquierda(Jugador jugador, int despl) {
+		boolean resultado = true;
+		for (int j = 0; j < 3; j++) {
+			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), (j+despl)%3, j);
+		}
+		return true;
+	}
+
+	private boolean esGanadorEnLaDiagonaDerecha(Jugador jugador, int despl) {
+		boolean resultado = true;
+		for (int j = 0; j < 3; j++) {
+			resultado = resultado && estaLaFichaEnPosicion(jugador.getPieza(), (j+despl)%3, 2-j);
+		}
+		return true;
+	}
+
 	public String hayGanador(Jugador jugador) { // ---------------------> lo malo del algoritmo es q tiene muchos for :(
 												// pero casi nada de if
-		String ficha1 = jugador.getPieza(); // pq los otros q vi estan llenos de if.
 
-		boolean resultado1 = true;
-		boolean resultado2 = true;
-		boolean resultado3 = true;
-		boolean resultado4 = true;
-		boolean resultado5 = true;
-		boolean resultado6 = true;
-		boolean resultado7 = true;
-		boolean resultado8 = true;
-
-		for (int j = 0; j < 3; j++) {
-			resultado1 = resultado1 && esGanador(ficha1, j, 0);
-			resultado2 = resultado2 && esGanador(ficha1, 0, j);
-			resultado3 = resultado3 && esGanador(ficha1, j, j);
-			resultado4 = resultado4 && esGanador(ficha1, j, 1);
-			resultado5 = resultado5 && esGanador(ficha1, j, 2);
-			resultado6 = resultado6 && esGanador(ficha1, 1, j);
-			resultado7 = resultado7 && esGanador(ficha1, 2, j);
-			resultado8 = resultado8 && esGanador(ficha1, j, 2 - j);
-
+		boolean result=false;
+		for(int i=0;i<3;i++) {
+			result = result || esGanadorEnLaFila(i,jugador);
+			result = result || esGanadorEnLaColumna(i,jugador);
+			result = result || esGanadorEnLaDiagonaIzquierda(jugador,i);
+			result = result || esGanadorEnLaDiagonaDerecha(jugador,i);
 		}
-
-		boolean acum = resultado1 || resultado2 || resultado3 || resultado4 || resultado5 || resultado6 || resultado7
-				|| resultado8;
-
-		if (acum) {
+		
+		if (result) {
 			return jugador.getPieza();
 		}
 		return "";
 
 	}
 
-	public boolean esGanador(String ficha1, int i, int j) {
-		if (ficha1.equals(tablero[i][j])) {
-			return true;
-		}
-		return false;
+	public boolean estaLaFichaEnPosicion(String ficha1, int i, int j) {
+		return (ficha1.equals(tablero[i][j]));
 	}
 
 	public void vaciar() {
