@@ -46,6 +46,20 @@ public class HayEmpateTest {
 		assertTrue(tablero.hayEmpate(jugador1, jugador2));
 	}
 	
+	@Test
+	public void testHayEmpateTiro() {
+		tablero.agregar(0, 0, jugador1);
+		tablero.agregar(0, 2, jugador2);
+		tablero.agregar(0, 1, jugador1);
+		tablero.agregar(1, 0, jugador2);
+		tablero.agregar(1, 2, jugador1);
+		tablero.agregar(1, 1, jugador2);
+		tablero.agregar(2, 1, jugador1);
+		tablero.agregar(2, 1, jugador2);
+		
+		assertTrue(tablero.hayEmpate(jugador1, jugador2));
+	}
+	
 	
 
 
