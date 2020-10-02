@@ -4,10 +4,25 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.ComponentOrientation;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import tp.Juego;
+
+import javax.swing.JSlider;
+import javax.swing.JMenuBar;
 
 public class Ventana {
 
 	private JFrame frame;
+	Juego juego = new Juego();
 
 	/**
 	 * Launch the application.
@@ -37,29 +52,84 @@ public class Ventana {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.getContentPane().setLayout(null);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		matrizBotones();
+		
+		JPanel panel = new JPanel();
+        panel.setBackground(SystemColor.menu);
+        panel.setBounds(0, 0, 434, 261);
+        frame.getContentPane().add(panel);
+        matrizBotones (panel);
+        panel.setLayout(null);
 
 	}
 
-	public JButton[][] matrizBotones() {
-		JButton botones[][] = new JButton[3][3];
-		int y = 39;
-		int x = 107;
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				botones[i][j] = new JButton();
-				botones[i][j].setBounds(x, y, 60, 60);
-				frame.getContentPane().add(botones[i][j]);
-				x += 65;
-			}
-			y += 64;
-			x = 107;
+	
+	public void matrizBotones (JPanel panel){
+      
+		 JButton botones[][] = new JButton[3][3];
+		
+		JButton boton00 = new JButton("");
+        boton00.setBounds(120, 44, 60, 60);
+        botones[0][0] = boton00;
+        panel.add(boton00);
+        
 
-		}
-		return botones;
-	}
+        JButton boton01 = new JButton("");
+        boton01.setBounds(190, 44, 60, 60);
+        panel.add(boton01);
+        botones[0][1] = boton01;
 
-}
+
+        JButton boton02 = new JButton("");
+        boton02.setBounds(260, 44, 60, 60);
+        panel.add(boton02);
+        botones[0][2] = boton02;
+
+        JButton boton10 = new JButton("");
+        boton10.setBounds(120, 109, 60, 60);
+        panel.add(boton10);
+        botones[1][0] = boton10;
+
+        JButton boton11 = new JButton("");
+        boton11.setBounds(190, 109, 60, 60);
+        panel.add(boton11);
+        botones[1][1] = boton11;
+
+        JButton boton12 = new JButton("");
+        boton12.setBounds(260, 109, 60, 60);
+        panel.add(boton12);
+        botones[1][2] = boton12;
+        
+        JButton boton20 = new JButton("");
+        boton20.setBounds(120, 177, 60, 60);
+        panel.add(boton20);
+        botones[2][0] = boton20;
+
+        JButton boton21 = new JButton("");
+        boton21.setBounds(190, 177, 60, 60);
+        panel.add(boton21);
+        botones[2][1] = boton21;
+
+        JButton boton22 = new JButton();
+        boton22.setBounds(260, 177, 60, 60);
+        panel.add(boton22);
+        botones[2][2] = boton22;
+        
+        
+     
+        
+        for (int i = 0; i < 3; i++) {
+          for (int j = 0; j < 3; j++) {
+        	botones[i][j].addActionListener(new PageActionListener(i,j,juego));
+		            }
+		  }
+        	
+          
+        
+        
+        
+      
+}}

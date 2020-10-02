@@ -29,7 +29,7 @@ public class Tablero {
 		return false;
 	}
 
-	public void agregar(int posicion1, int posicion2, Jugador jugador) { // la posicion tiene q ser un par de numeros pq
+	public void agregar(int posicion1, int posicion2, Jugador jugador) {     // la posicion tiene q ser un par de numeros pq
 																			// tengo q comparar la fila y la columna POR
 																			// AHORA
 		if (!estaOcupado(posicion1, posicion2)) {
