@@ -23,6 +23,8 @@ public class Ventana {
 
 	private JFrame frame;
 	Juego juego = new Juego();
+	VentanaInicial ventanaInicial = new VentanaInicial ();
+	private JPanel panel_1;
 
 	/**
 	 * Launch the application.
@@ -53,16 +55,20 @@ public class Ventana {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.getContentPane().setLayout(null);
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 450, 300);	
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
-		JPanel panel = new JPanel();
-        panel.setBackground(SystemColor.menu);
+		ventanaInicial.initialize(frame);
+		frame.getContentPane().setLayout(null);
+		panel_1 = new JPanel();
+		panel_1.setBounds(0, 0, 434, 261);
+        panel_1.setBackground(SystemColor.menu);
+        frame.getContentPane().add(panel_1);
+        matrizBotones (panel_1);
+        
+        JPanel panel = new JPanel();
         panel.setBounds(0, 0, 434, 261);
         frame.getContentPane().add(panel);
-        matrizBotones (panel);
-        panel.setLayout(null);
 
 	}
 
@@ -70,9 +76,10 @@ public class Ventana {
 	public void matrizBotones (JPanel panel){
       
 		 JButton botones[][] = new JButton[3][3];
+		panel_1.setLayout(null);
 		
 		JButton boton00 = new JButton("");
-        boton00.setBounds(120, 44, 60, 60);
+		boton00.setBounds(120, 44, 60, 60);
         botones[0][0] = boton00;
         panel.add(boton00);
         
@@ -132,4 +139,5 @@ public class Ventana {
         
         
       
-}}
+}	
+}
