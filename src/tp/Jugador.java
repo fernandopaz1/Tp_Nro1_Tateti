@@ -19,4 +19,9 @@ public class Jugador {
 		return pieza;
 	}
 
+	public void setNombre(String nombre2) {
+		nombre = nombre2;
+		
+	}
+
 }

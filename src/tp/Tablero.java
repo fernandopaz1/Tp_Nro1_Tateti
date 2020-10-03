@@ -82,7 +82,7 @@ public class Tablero {
 		if (result) {
 			return jugador.getPieza();
 		}
-		return "No hay ganador";
+		return "";
 
 	}
 

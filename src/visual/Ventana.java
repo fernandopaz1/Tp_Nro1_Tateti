@@ -18,13 +18,16 @@ import tp.Juego;
 
 import javax.swing.JSlider;
 import javax.swing.JMenuBar;
+import javax.swing.JLabel;
+import javax.swing.JSpinner;
 
 public class Ventana {
 
 	private JFrame frame;
 	Juego juego = new Juego();
 	VentanaInicial ventanaInicial = new VentanaInicial ();
-	private JPanel panel_1;
+	VentanaFinal ventanaFinal =new VentanaFinal ();
+	private JPanel panelDeJuego;
 
 	/**
 	 * Launch the application.
@@ -56,19 +59,27 @@ public class Ventana {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 450, 300);	
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		
-		ventanaInicial.initialize(frame);
-		frame.getContentPane().setLayout(null);
-		panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 434, 261);
-        panel_1.setBackground(SystemColor.menu);
-        frame.getContentPane().add(panel_1);
-        matrizBotones (panel_1);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panelDeJuego = new JPanel();
+		panelDeJuego.setVisible(false);
+		panelDeJuego.setBounds(0, 0, 434, 261);
+        frame.getContentPane().setLayout(null);
+        panelDeJuego.setBackground(SystemColor.menu);
+        frame.getContentPane().add(panelDeJuego);
+        matrizBotones (panelDeJuego);
         
-        JPanel panel = new JPanel();
-        panel.setBounds(0, 0, 434, 261);
-        frame.getContentPane().add(panel);
+        JPanel panelInicial = new JPanel();
+        panelInicial.setBounds(0, 0, 434, 261);
+        frame.getContentPane().add(panelInicial);
+        
+        ventanaInicial.initialize(panelInicial, panelDeJuego, juego);
+        
+        JPanel panelFinal = new JPanel();
+        panelFinal.setBounds(0, 0, 434, 261);
+        frame.getContentPane().add(panelFinal);
+        panelFinal.setLayout(null);
+        
+        ventanaFinal.initialize(panelFinal,panelDeJuego,panelInicial);
 
 	}
 
@@ -76,7 +87,7 @@ public class Ventana {
 	public void matrizBotones (JPanel panel){
       
 		 JButton botones[][] = new JButton[3][3];
-		panel_1.setLayout(null);
+		panelDeJuego.setLayout(null);
 		
 		JButton boton00 = new JButton("");
 		boton00.setBounds(120, 44, 60, 60);
@@ -130,7 +141,7 @@ public class Ventana {
         
         for (int i = 0; i < 3; i++) {
           for (int j = 0; j < 3; j++) {
-        	botones[i][j].addActionListener(new PageActionListener(i,j,juego));
+        	botones[i][j].addActionListener(new PageActionListener(i,j,juego,ventanaFinal));
 		            }
 		  }
         	

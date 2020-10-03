@@ -35,20 +35,39 @@ public class Juego {
 	
 	public void guardarMovimiento (int posicion1 , int posicion2) {
 
-		tablero.agregar(posicion1, posicion2, this.jugadorActual());
 		
-		if (!tablero.estaOcupado(posicion1, posicion2) == false ) {
-			this.cambiarTurno();
+		
+		if (!tablero.estaOcupado(posicion1, posicion2) ) {
+			tablero.agregar(posicion1, posicion2, this.jugadorActual());
 		}
-		
 	}
 	
-//	public void hayGanador() {
-//		
-//		if (tablero.hayGanador(this.jugadorActual())
-//				
-//	}
+	public void cambiarNombreJugador1 (String nombre) {
+
+	  jugador1.setNombre(nombre);
+	  System.out.println(jugador1.getNombre());
+	}
 	
-	
+	public void cambiarNombreJugador2 (String nombre) {
+
+		  jugador2.setNombre(nombre);
+		  System.out.println (jugador2.getNombre());
+	}
+
+	public String hayGanador() {
+		String ganador = tablero.hayGanador(jugadorActual());
+		if (!ganador.equals("")) {
+			return "EL GANADOR ES : " + jugadorActual().getNombre() ;
+		}
+		this.cambiarTurno();
+		return "";
+	}
 	
 }
+	
+	
+
+	
+	
+	
+
