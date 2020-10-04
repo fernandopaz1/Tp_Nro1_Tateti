@@ -63,6 +63,9 @@ public class Juego {
 		return "";
 	}
 	
+	public void tableroNuevo() {
+		tablero.vaciar();
+	}
 }
 	
 	

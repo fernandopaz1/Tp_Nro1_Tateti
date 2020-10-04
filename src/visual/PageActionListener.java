@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 import tp.Juego;
 
@@ -31,8 +30,9 @@ public class PageActionListener implements ActionListener{
 				clicked.setText(juego.jugadorActual().getPieza());
 				juego.guardarMovimiento(i,j);
 				String ganador = juego.hayGanador();
-				ventanaFinal.setMensaje(ganador);
+				
 				if (ganador != "") {
+					ventanaFinal.setMensaje(ganador);
 					ventanaFinal.mostrarVentana();
 				}
 			}

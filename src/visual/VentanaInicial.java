@@ -1,10 +1,8 @@
 package visual;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -12,29 +10,17 @@ import tp.Juego;
 
 public class VentanaInicial {
 
-	private JFrame frame;
 	private javax.swing.JTextField textJugador1;
 	private javax.swing.JTextField textJugador2;
 	
 	
 
-	/**
-//	 * Launch the application.
-//	 */
 
-	/**
-//	 * Initialize the contents of the frame.
-//	 */
 	public void initialize(JPanel panelInicial, JPanel panelDeJuego, Juego newGame) {
 		
-//			frame.getContentPane().setEnabled(false);
-//			frame.getContentPane().setLayout(null);
-//			
-//			javax.swing.JPanel panel = new javax.swing.JPanel();
 			panelInicial.setBorder(null);
 			panelInicial.setBackground(new java.awt.Color(244, 164, 96));
 			panelInicial.setBounds(0, 0, 434, 261);
-//			frame.getContentPane().add(panel);
 			panelInicial.setLayout(null);
 			
 			javax.swing.JLabel titulo = new javax.swing.JLabel("TA - TE - TORO");
@@ -44,6 +30,7 @@ public class VentanaInicial {
 			titulo.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 38));
 			titulo.setBounds(73, 22, 286, 48);
 			panelInicial.add(titulo);
+			
 			javax.swing.JLabel msj_jugador1 = new javax.swing.JLabel("Jugador 1 : ");
 			msj_jugador1.setForeground(new java.awt.Color(105, 105, 105));
 			msj_jugador1.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
@@ -81,11 +68,14 @@ public class VentanaInicial {
 					panelDeJuego.setVisible(true);
 					newGame.cambiarNombreJugador1(textJugador1.getText());
 					newGame.cambiarNombreJugador2(textJugador2.getText());
-					
-				
+					newGame.tableroNuevo();
 					
 				}
 			});
 			
 		}
+	public void borrarNombres() {
+		textJugador1.setText("");
+		textJugador2.setText("");
+	}
 }

@@ -15,7 +15,7 @@ public class Tablero {
 	private void indiceEnRango(int i) {
 		if (i < 0)
 			throw new IllegalArgumentException("No se permiten indices negativos: " + i);
-		if (i >= 3)
+		if (i >=3)
 			throw new IllegalArgumentException("Indice fuera de rango: " + i);
 
 	}

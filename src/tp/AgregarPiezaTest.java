@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+	
 
 public class AgregarPiezaTest {
 
@@ -22,10 +22,14 @@ public class AgregarPiezaTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testEstaOcupadoFueraDelTablero() {
-
 		tablero.estaOcupado(3, 3); // Fuera del tablero podemos pensar que esta ocupado?
 	}
-
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testEstaOcupadoFueraDelTableroIndiceNegativo() {
+		tablero.estaOcupado(-3, 3); // Fuera del tablero podemos pensar que esta ocupado?
+	}
+	
 	@Test
 	public void testNoEstaOcupado() {
 		assertFalse(tablero.estaOcupado(1, 1)); // se crea vacio (no se si poner todos)
