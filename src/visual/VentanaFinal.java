@@ -8,10 +8,10 @@ import javax.swing.SwingConstants;
 
 public class VentanaFinal {
 
-	public javax.swing.JLabel titulo;
-	public JPanel panelInicial;
-	public JPanel panelFinal;
-	public JPanel panelDeJuego;
+	private javax.swing.JLabel titulo;
+	private JPanel panelInicial;
+	private JPanel panelFinal;
+	private JPanel panelDeJuego;
 	
 	public VentanaFinal(JPanel panelFinal, JPanel panelDeJuego, JPanel panelInicial) {
 		this.panelInicial=panelInicial;
