@@ -92,7 +92,7 @@ public class HayGanadorTest {
 	@Test
 	public void testTableroVacio() {
 
-		assertEquals("No hay ganador", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.hayGanador(jugador1));
 	}
 
 	@Test
@@ -101,7 +101,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 2, jugador1);
 		tablero.agregar(1, 2, jugador2);
 
-		assertEquals("No hay ganador", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.hayGanador(jugador1));
 	}
 
 	@Test
@@ -109,7 +109,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(1, 1, jugador2);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals("No hay ganador", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.hayGanador(jugador1));
 
 	}
 
@@ -161,7 +161,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
 
-		assertEquals("No hay ganador", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.hayGanador(jugador1));
 	}
 
 }

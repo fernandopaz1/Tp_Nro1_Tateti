@@ -5,8 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import tp.Tablero;
-import tp.Jugador;
 
 public class AgregarPiezaTest {
 
@@ -57,7 +55,9 @@ public class AgregarPiezaTest {
 
 	@Test
 	public void vaciar() {
-		// pendiente
+		tablero.agregar(0, 0, jugador1);
+		tablero.vaciar();
+		assertEquals(null,tablero.tablero[0][0]);
 	}
 
 }

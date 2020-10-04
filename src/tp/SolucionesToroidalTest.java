@@ -66,7 +66,7 @@ public class SolucionesToroidalTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
 		
-		assertEquals("No hay ganador", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.hayGanador(jugador1));
 	}
 	
 	
