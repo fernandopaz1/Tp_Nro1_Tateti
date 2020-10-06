@@ -13,12 +13,12 @@ public class VentanaInicial {
 	private javax.swing.JTextField textJugador1;
 	private javax.swing.JTextField textJugador2;
 	private JPanel panelInicial;
-	private VentanaDeJuego ventanaDeJuego;
+	private JPanel panelDeJuego;
 	private Juego newGame;
 	
 
-	public VentanaInicial(JPanel panelInicial, VentanaDeJuego ventanaDeJuego, Juego newGame) {
-		this.ventanaDeJuego=ventanaDeJuego;
+	public VentanaInicial(JPanel panelInicial, JPanel panelDeJuego, Juego newGame) {
+		this.panelDeJuego=panelDeJuego;
 		this.panelInicial=panelInicial;
 		this.newGame=newGame;
 	}
@@ -74,16 +74,15 @@ public class VentanaInicial {
 			boton_jugar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					panelInicial.setVisible(false);
-					ventanaDeJuego.setVisible(true);
+					panelDeJuego.setVisible(true);
 					newGame.cambiarNombreJugador1(textJugador1.getText());
 					newGame.cambiarNombreJugador2(textJugador2.getText());
 					
-					//Borra el contenido del tablero antes de iniciar
-					newGame.tableroNuevo();
+					
 					//borra los nombres en el inputText anntes de iniciar
 					//Los nombres ya estan guardados en la clase newGame
 					borrarNombres();
-					ventanaDeJuego.limpiarTableroVisual();
+					panelDeJuego.setVisible(true);
 					
 				}
 			});

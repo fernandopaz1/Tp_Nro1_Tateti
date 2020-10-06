@@ -77,14 +77,22 @@ public class Ventana {
 		frame.getContentPane().add(panelFinal);
 		panelFinal.setLayout(null);
 
-		ventanaFinal = new VentanaFinal(panelFinal, panelDeJuego, panelInicial);
-		ventanaFinal.initialize();
+		
+		ventanaInicial=new VentanaInicial(panelInicial, panelDeJuego, juego);
+		
+		ventanaFinal = new VentanaFinal(panelFinal, panelDeJuego, panelInicial, ventanaDeJuego);
 
+		
 		ventanaDeJuego= new VentanaDeJuego(panelDeJuego,juego,ventanaFinal);
 		
 		
-		ventanaInicial=new VentanaInicial(panelInicial, ventanaDeJuego, juego);
 		ventanaInicial.initialize();
+		
+	
+		
+		
+		ventanaFinal.initialize();
+		
 		
 		ventanaDeJuego.initialize();
 		

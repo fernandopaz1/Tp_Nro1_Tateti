@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 public class VentanaFinal {
@@ -12,12 +13,14 @@ public class VentanaFinal {
 	private JPanel panelInicial;
 	private JPanel panelFinal;
 	private JPanel panelDeJuego;
+	private VentanaDeJuego ventanaDeJuego;
 	
-	public VentanaFinal(JPanel panelFinal, JPanel panelDeJuego, JPanel panelInicial) {
+	public VentanaFinal(JPanel panelFinal, JPanel panelDeJuego, JPanel panelInicial, VentanaDeJuego ventanaDeJuego) {
 		this.panelInicial=panelInicial;
 		this.panelDeJuego = panelDeJuego;
 		this.panelFinal = panelFinal;
 		this.titulo = new javax.swing.JLabel();
+		this.ventanaDeJuego=ventanaDeJuego;
 	}
 
 	public void initialize() {
@@ -32,18 +35,32 @@ public class VentanaFinal {
 
 		panelFinal.setVisible(false);
 
-		javax.swing.JButton boton_jugar = new javax.swing.JButton("\u00A1JUGAR!");
-		boton_jugar.setForeground(new java.awt.Color(255, 99, 71));
-		boton_jugar.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 16));
-		boton_jugar.setBackground(new java.awt.Color(240, 230, 140));
-		boton_jugar.setBounds(158, 169, 118, 48);
-		panelFinal.add(boton_jugar);
+		JButton botonMenu = new JButton("\u00A1Volver al menu!");
+		botonMenu.setForeground(new java.awt.Color(255, 99, 71));
+		botonMenu.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 16));
+		botonMenu.setBackground(new java.awt.Color(240, 230, 140));
+		botonMenu.setBounds(128, 180, 180, 48);
+		panelFinal.add(botonMenu);
 		
-		boton_jugar.addActionListener(new ActionListener() {
+		botonMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panelFinal.setVisible(false);
 				panelInicial.setVisible(true);
 				
+			}
+		});
+		
+		JButton botonJugarOtraVez = new JButton("\u00A1Nueva ronda!");
+		botonJugarOtraVez.setForeground(new java.awt.Color(255, 99, 71));
+		botonJugarOtraVez.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 16));
+		botonJugarOtraVez.setBackground(new java.awt.Color(240, 230, 140));
+		botonJugarOtraVez.setBounds(128, 130, 180, 48);
+		panelFinal.add(botonJugarOtraVez);
+		
+		botonJugarOtraVez.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				panelFinal.setVisible(false);
+				panelDeJuego.setVisible(true);
 			}
 		});
 	}
