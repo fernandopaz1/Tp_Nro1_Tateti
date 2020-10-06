@@ -30,7 +30,7 @@ public class VentanaFinal {
 		titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		titulo.setForeground(new java.awt.Color(255, 69, 0));
 		titulo.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 28));
-		titulo.setBounds(73, 22, 286, 48);
+		titulo.setBounds(20, 22, 386, 48);
 		panelFinal.add(titulo);
 
 		panelFinal.setVisible(false);

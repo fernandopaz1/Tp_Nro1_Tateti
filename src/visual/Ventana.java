@@ -20,6 +20,10 @@ import javax.swing.JSlider;
 import javax.swing.JMenuBar;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Ventana {
 
@@ -81,7 +85,7 @@ public class Ventana {
 		ventanaInicial=new VentanaInicial(panelInicial, panelDeJuego, juego);
 		
 		ventanaFinal = new VentanaFinal(panelFinal, panelDeJuego, panelInicial, ventanaDeJuego);
-
+		
 		
 		ventanaDeJuego= new VentanaDeJuego(panelDeJuego,juego,ventanaFinal);
 		
@@ -98,5 +102,5 @@ public class Ventana {
 		
 
 	}
-
-	}
+	
+}

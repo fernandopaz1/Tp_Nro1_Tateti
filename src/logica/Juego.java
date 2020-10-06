@@ -12,8 +12,8 @@ public class Juego {
 	public Juego() {
 	
 		this.tablero = new Tablero();
-		this.jugador1 = new Jugador("fulanito", "X");
-		this.jugador2 = new Jugador("menganito", "O");
+		this.jugador1 = new Jugador("", "X");
+		this.jugador2 = new Jugador("", "O");
 		
 		turno= true;
 	}
@@ -43,8 +43,11 @@ public class Juego {
 	}
 	
 	public void cambiarNombreJugador1 (String nombre) {
-
-	  jugador1.setNombre(nombre);
+		String nombre2;
+		if(nombre.length()<3) {
+			nombre2=nombre;
+		}else nombre2=""+nombre.charAt(0)+nombre.charAt(1)+nombre.charAt(2);
+	  jugador1.setNombre(nombre2);
 	  System.out.println(jugador1.getNombre());
 	}
 	
@@ -61,6 +64,10 @@ public class Juego {
 		}
 		this.cambiarTurno();
 		return "";
+	}
+	
+	public boolean hayEmpate() {
+		return tablero.hayEmpate(jugador1, jugador2);
 	}
 	
 	public void tableroNuevo() {

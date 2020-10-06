@@ -95,16 +95,21 @@ public class Tablero {
 		return;
 	}
 	
+	public boolean estaCompleto(){
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+				if(tablero[i][j] == null)
+					return false;
+			}
+		}
+		return true;
+		
+	}
 	
 	// Si no hay ganador en la fila ni en la columna entonces hay un empate porque
 	// ningun jugador logro completar la fila y la columna.
 	public boolean hayEmpate(Jugador jugador, Jugador otroJugador) {
-		boolean result = true;
-		for (int i = 0; i < 3; i++) {
-			result = result && (!esGanadorEnLaFila(i, jugador) && !esGanadorEnLaFila(i, otroJugador))
-					&& (!esGanadorEnLaColumna(i, jugador) && !esGanadorEnLaColumna(i, otroJugador));
-		}
-		return result;
+		return estaCompleto() && getGanador(jugador)=="" && getGanador(otroJugador)=="";
 	}
 
 }

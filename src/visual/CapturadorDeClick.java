@@ -36,6 +36,10 @@ public class CapturadorDeClick implements ActionListener{
 						ventanaFinal.setMensaje(ganador);
 						ventanaFinal.mostrarVentana();
 						ventanaDeJuego.limpiarTablero();
+					}else if(juego.hayEmpate()) {
+						ventanaFinal.setMensaje("Empate");
+						ventanaFinal.mostrarVentana();
+						ventanaDeJuego.limpiarTablero();
 					}
 			}
 			

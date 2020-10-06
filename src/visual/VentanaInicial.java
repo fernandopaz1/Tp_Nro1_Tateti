@@ -71,18 +71,33 @@ public class VentanaInicial {
 			boton_jugar.setBounds(158, 169, 118, 48);
 			panelInicial.add(boton_jugar);
 			
+			
+			javax.swing.JLabel msjError = new javax.swing.JLabel("Error: nombre inválido");
+			msjError.setForeground(new java.awt.Color(105, 105, 105));
+			msjError.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
+			msjError.setBounds(158, 220, 200, 27);
+			msjError.setVisible(false);
+			panelInicial.add(msjError);
+			
+			
 			boton_jugar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					panelInicial.setVisible(false);
-					panelDeJuego.setVisible(true);
-					newGame.cambiarNombreJugador1(textJugador1.getText());
-					newGame.cambiarNombreJugador2(textJugador2.getText());
 					
 					
-					//borra los nombres en el inputText anntes de iniciar
-					//Los nombres ya estan guardados en la clase newGame
-					borrarNombres();
-					panelDeJuego.setVisible(true);
+					if(textJugador1.getText().length()>0 && textJugador2.getText().length()>0 &&
+					   textJugador1.getText().length()<6 && textJugador2.getText().length()<6) {
+							panelInicial.setVisible(false);
+							panelDeJuego.setVisible(true);
+							newGame.cambiarNombreJugador1(textJugador1.getText());
+							newGame.cambiarNombreJugador2(textJugador2.getText());
+							borrarNombres();
+							panelDeJuego.setVisible(true);
+							msjError.setVisible(false);
+					}else {
+						msjError.setVisible(true);
+						
+					}
+				
 					
 				}
 			});
