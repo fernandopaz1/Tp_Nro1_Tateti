@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import tp.Juego;
+import logica.Juego;
 
 public class PageActionListener implements ActionListener{
 

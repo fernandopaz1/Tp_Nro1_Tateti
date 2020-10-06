@@ -1,4 +1,4 @@
-package tp;
+package logica;
 
 import static org.junit.Assert.*;
 
@@ -24,7 +24,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals("X", tablero.hayGanador(jugador1)); // cambiar nombre de hayGanador() parece booleano
+		assertEquals("X", tablero.getGanador(jugador1)); // cambiar nombre de hayGanador() parece booleano
 	}
 
 	@Test
@@ -32,7 +32,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 2, jugador1);
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(2, 0, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 	}
 
@@ -41,7 +41,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 0, jugador2);
 		tablero.agregar(0, 1, jugador2);
 		tablero.agregar(0, 2, jugador2);
-		assertEquals(tablero.hayGanador(jugador2), "O"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador2), "O"); // cambiar nombre de hayGanador() parece booleano
 	}
 
 	@Test
@@ -49,7 +49,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(1, 2, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 	}
 
@@ -58,7 +58,7 @@ public class HayGanadorTest {
 		tablero.agregar(2, 0, jugador1);
 		tablero.agregar(2, 1, jugador1);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 	}
 
@@ -67,7 +67,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 0, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 	}
 
@@ -76,7 +76,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 1, jugador1);
 		tablero.agregar(1, 1, jugador1);
 		tablero.agregar(2, 1, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 	}
 
@@ -85,14 +85,14 @@ public class HayGanadorTest {
 		tablero.agregar(0, 2, jugador1);
 		tablero.agregar(1, 2, jugador1);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals(tablero.hayGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
+		assertEquals(tablero.getGanador(jugador1), "X"); // cambiar nombre de hayGanador() parece booleano
 
 	}
 
 	@Test
 	public void testTableroVacio() {
 
-		assertEquals("", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.getGanador(jugador1));
 	}
 
 	@Test
@@ -101,7 +101,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 2, jugador1);
 		tablero.agregar(1, 2, jugador2);
 
-		assertEquals("", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.getGanador(jugador1));
 	}
 
 	@Test
@@ -109,7 +109,7 @@ public class HayGanadorTest {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(1, 1, jugador2);
 		tablero.agregar(2, 2, jugador1);
-		assertEquals("", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.getGanador(jugador1));
 
 	}
 
@@ -122,7 +122,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 2, jugador1);
 		tablero.agregar(2, 1, jugador1);
 
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 
 	@Test
@@ -132,7 +132,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 1, jugador1);
 
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 
 	@Test
@@ -142,7 +142,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 2, jugador1);
 		tablero.agregar(2, 0, jugador1);
 
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 
 	@Test
@@ -152,7 +152,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
 
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 
 	@Test
@@ -161,7 +161,7 @@ public class HayGanadorTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
 
-		assertEquals("", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.getGanador(jugador1));
 	}
 
 }

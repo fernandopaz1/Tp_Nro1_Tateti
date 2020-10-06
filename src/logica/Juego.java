@@ -1,4 +1,4 @@
-package tp;
+package logica;
 
 public class Juego {
 
@@ -55,7 +55,7 @@ public class Juego {
 	}
 
 	public String hayGanador() {
-		String ganador = tablero.hayGanador(jugadorActual());
+		String ganador = tablero.getGanador(jugadorActual());
 		if (!ganador.equals("")) {
 			return "EL GANADOR ES : " + jugadorActual().getNombre() ;
 		}

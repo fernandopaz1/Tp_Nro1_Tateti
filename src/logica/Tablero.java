@@ -1,4 +1,4 @@
-package tp;
+package logica;
 
 public class Tablero {
 
@@ -69,7 +69,7 @@ public class Tablero {
 		return resultado;
 	}
 
-	public String hayGanador(Jugador jugador) { 
+	public String getGanador(Jugador jugador) { 
 
 		boolean result = false;
 		for (int i = 0; i < 3; i++) {

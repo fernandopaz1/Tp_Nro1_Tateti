@@ -1,4 +1,4 @@
-package tp;
+package logica;
 
 public class Jugador {
 

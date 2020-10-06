@@ -1,4 +1,4 @@
-package tp;
+package logica;
 
 import static org.junit.Assert.*;
 
@@ -26,7 +26,7 @@ public class SolucionesToroidalTest {
 		tablero.agregar(1, 2, jugador1);
 		tablero.agregar(2, 1, jugador1);
 		
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class SolucionesToroidalTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 1, jugador1);
 		
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 	
 	
@@ -47,7 +47,7 @@ public class SolucionesToroidalTest {
 		tablero.agregar(1, 2, jugador1);
 		tablero.agregar(2, 0, jugador1);
 		
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 	
 	@Test
@@ -57,7 +57,7 @@ public class SolucionesToroidalTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
 		
-		assertEquals(jugador1.getPieza(), tablero.hayGanador(jugador1));
+		assertEquals(jugador1.getPieza(), tablero.getGanador(jugador1));
 	}
 	
 	@Test
@@ -66,7 +66,7 @@ public class SolucionesToroidalTest {
 		tablero.agregar(1, 0, jugador1);
 		tablero.agregar(2, 2, jugador1);
 		
-		assertEquals("", tablero.hayGanador(jugador1));
+		assertEquals("", tablero.getGanador(jugador1));
 	}
 	
 	

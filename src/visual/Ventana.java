@@ -14,7 +14,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import tp.Juego;
+import logica.Juego;
 
 import javax.swing.JSlider;
 import javax.swing.JMenuBar;

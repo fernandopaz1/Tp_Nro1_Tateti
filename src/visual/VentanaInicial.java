@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import tp.Juego;
+import logica.Juego;
 
 public class VentanaInicial {
 
