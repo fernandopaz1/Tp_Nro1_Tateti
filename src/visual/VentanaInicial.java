@@ -55,16 +55,16 @@ public class VentanaInicial {
 			titulo.setBounds(73, 22, 286, 48);
 			panelInicial.add(titulo);
 			
-			javax.swing.JLabel msj_jugador1 = new javax.swing.JLabel("Jugador 1 : ");
+			javax.swing.JLabel msj_jugador1 = new javax.swing.JLabel("Jugador 1: ");
 			msj_jugador1.setForeground(new java.awt.Color(105, 105, 105));
 			msj_jugador1.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
-			msj_jugador1.setBounds(83, 81, 91, 27);
+			msj_jugador1.setBounds(82, 81, 91, 27);
 			panelInicial.add(msj_jugador1);
 			
-			javax.swing.JLabel msj_jugador2 = new javax.swing.JLabel("Jugador 2 : ");
+			javax.swing.JLabel msj_jugador2 = new javax.swing.JLabel("Jugador 2: ");
 			msj_jugador2.setForeground(new java.awt.Color(105, 105, 105));
 			msj_jugador2.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
-			msj_jugador2.setBounds(81, 119, 72, 27);
+			msj_jugador2.setBounds(80, 119, 91, 27);
 			panelInicial.add(msj_jugador2);
 			
 			textJugador1 = new javax.swing.JTextField();
