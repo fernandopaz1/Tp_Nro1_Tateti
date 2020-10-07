@@ -43,11 +43,8 @@ public class Juego {
 	}
 	
 	public void cambiarNombreJugador1 (String nombre) {
-		String nombre2;
-		if(nombre.length()<3) {
-			nombre2=nombre;
-		}else nombre2=""+nombre.charAt(0)+nombre.charAt(1)+nombre.charAt(2);
-	  jugador1.setNombre(nombre2);
+
+	  jugador1.setNombre(nombre);
 	  System.out.println(jugador1.getNombre());
 	}
 	

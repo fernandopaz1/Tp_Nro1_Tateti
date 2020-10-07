@@ -3,6 +3,7 @@ package visual;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -15,18 +16,32 @@ public class VentanaInicial {
 	private JPanel panelInicial;
 	private JPanel panelDeJuego;
 	private Juego newGame;
+	private JLabel msjError;
 	
 
 	public VentanaInicial(JPanel panelInicial, JPanel panelDeJuego, Juego newGame) {
+		
 		this.panelDeJuego=panelDeJuego;
 		this.panelInicial=panelInicial;
 		this.newGame=newGame;
+		
+	}
+	
+	public JLabel agregarMsjError (String textoDeError) {
+		
+		javax.swing.JLabel msjError = new javax.swing.JLabel(textoDeError);
+		msjError.setForeground(new java.awt.Color(105, 105, 105));
+		msjError.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
+		msjError.setBounds(10, 220, 450, 27);
+		msjError.setVisible(false);
+		panelInicial.add(msjError);
+		return msjError;
 	}
 	
 
-
 	public void initialize() {
-		
+			
+			
 			panelInicial.setBorder(null);
 			panelInicial.setBackground(new java.awt.Color(244, 164, 96));
 			panelInicial.setBounds(0, 0, 434, 261);
@@ -64,6 +79,8 @@ public class VentanaInicial {
 			textJugador2.setBounds(190, 121, 86, 20);
 			panelInicial.add(textJugador2);
 			
+			
+			
 			javax.swing.JButton boton_jugar = new javax.swing.JButton("\u00A1JUGAR!");
 			boton_jugar.setForeground(new java.awt.Color(255, 99, 71));
 			boton_jugar.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 16));
@@ -71,38 +88,63 @@ public class VentanaInicial {
 			boton_jugar.setBounds(158, 169, 118, 48);
 			panelInicial.add(boton_jugar);
 			
+			msjError = agregarMsjError("");
+//			msjError.setVisible(true);
 			
-			javax.swing.JLabel msjError = new javax.swing.JLabel("Error: nombre inválido");
-			msjError.setForeground(new java.awt.Color(105, 105, 105));
-			msjError.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
-			msjError.setBounds(158, 220, 200, 27);
-			msjError.setVisible(false);
-			panelInicial.add(msjError);
+			
+			
+//			javax.swing.JLabel msjError = new javax.swing.JLabel("Error: nombre invalido");
+//			msjError.setForeground(new java.awt.Color(105, 105, 105));
+//			msjError.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
+//			msjError.setBounds(158, 220, 200, 27);
+//			msjError.setVisible(false);
+//			panelInicial.add(msjError);
+			
+			
 			
 			
 			boton_jugar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					
-					
-					if(textJugador1.getText().length()>0 && textJugador2.getText().length()>0 &&
+					msjError.setVisible(false);	
+//					msjError = agregarMsjError(" ");
+//					msjError.setVisible(true);
+					if(textJugador1.getText().length()>1 && textJugador2.getText().length()>1 &&
 					   textJugador1.getText().length()<6 && textJugador2.getText().length()<6) {
+					
 							panelInicial.setVisible(false);
 							panelDeJuego.setVisible(true);
 							newGame.cambiarNombreJugador1(textJugador1.getText());
 							newGame.cambiarNombreJugador2(textJugador2.getText());
 							borrarNombres();
 							panelDeJuego.setVisible(true);
-							msjError.setVisible(false);
-					}else {
-						msjError.setVisible(true);
-						
+//							msjError.setVisible(false);	
+//							msjError = agregarMsjError(":)))");
+//							msjError.setVisible(true);
 					}
-				
+						
+					if(textJugador1.getText().length() == 1 || textJugador2.getText().length() == 1 ) {
+							msjError.setVisible(false);
+							msjError = agregarMsjError("Todos los jugadores deben colocar un nombre con mas de una letra! ");
+							msjError.setVisible(true);
+						}
+
 					
-				}
-			});
+					if (textJugador1.getText().length()>6  || textJugador2.getText().length()>6) {
+						msjError.setVisible(false);
+						msjError = agregarMsjError("Todos los jugadores deben tener un nombre con 5 letras o menos ! ");
+						msjError.setVisible(true);
+				
+					}
+					
+				
+				}	
+			}
+			
+			);
+			
 			
 		}
+	
 	public void borrarNombres() {
 		textJugador1.setText("");
 		textJugador2.setText("");
