@@ -7,12 +7,15 @@ import javax.swing.JPanel;
 
 import logica.Juego;
 
+
 public class VentanaDeJuego {
 
 	private JPanel panelDeJuego;
 	private Juego juego;
 	private VentanaFinal ventanaFinal;
 	private JButton botones[][];
+	
+	
 
 	public VentanaDeJuego(JPanel panelDeJuego, Juego juego, VentanaFinal ventanaFinal) {
 		this.panelDeJuego = panelDeJuego;
@@ -26,7 +29,22 @@ public class VentanaDeJuego {
 		panelDeJuego.setVisible(false);
 		panelDeJuego.setBounds(0, 0, 434, 261);
 
-		panelDeJuego.setBackground(SystemColor.menu);
+		panelDeJuego.setBackground(new java.awt.Color(244, 164, 96));
+		
+
+		javax.swing.JLabel msj_jugador1_pieza = new javax.swing.JLabel();
+		msj_jugador1_pieza.setForeground(new java.awt.Color(105, 105, 105));
+		msj_jugador1_pieza.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
+		msj_jugador1_pieza.setBounds(25, 22, 100, 27);
+		msj_jugador1_pieza.setText("X = " + "jugador1");
+		panelDeJuego.add(msj_jugador1_pieza);
+		
+		javax.swing.JLabel msj_jugador2_pieza = new javax.swing.JLabel("O = ");
+		msj_jugador2_pieza.setForeground(new java.awt.Color(105, 105, 105));
+		msj_jugador2_pieza.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
+		msj_jugador2_pieza.setBounds(330, 22, 100, 27);
+		msj_jugador2_pieza.setText("O = " + "jugador2");
+		panelDeJuego.add(msj_jugador2_pieza);
 		
 		limpiarTablero();
 	}

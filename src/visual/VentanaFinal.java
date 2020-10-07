@@ -32,6 +32,7 @@ public class VentanaFinal {
 		titulo.setFont(new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 28));
 		titulo.setBounds(20, 22, 386, 48);
 		panelFinal.add(titulo);
+		panelFinal.setBackground(new java.awt.Color(244, 164, 96));
 
 		panelFinal.setVisible(false);
 

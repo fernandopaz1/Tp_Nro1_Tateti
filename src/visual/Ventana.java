@@ -3,27 +3,12 @@ package visual;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JButton;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.ComponentOrientation;
 import java.awt.Color;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+
 
 import logica.Juego;
 
-import javax.swing.JSlider;
-import javax.swing.JMenuBar;
-import javax.swing.JLabel;
-import javax.swing.JSpinner;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class Ventana {
 

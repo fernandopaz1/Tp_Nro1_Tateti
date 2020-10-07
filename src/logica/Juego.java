@@ -5,6 +5,7 @@ public class Juego {
 	Tablero tablero;
 	Jugador jugador1;
 	Jugador jugador2;
+	String nombre1;
 	
 	boolean turno;
 	
@@ -43,7 +44,7 @@ public class Juego {
 	}
 	
 	public void cambiarNombreJugador1 (String nombre) {
-
+		
 	  jugador1.setNombre(nombre);
 	  System.out.println(jugador1.getNombre());
 	}
