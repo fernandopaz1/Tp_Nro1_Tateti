@@ -36,7 +36,7 @@ public class VentanaDeJuego {
 		msj_jugador1_pieza.setForeground(new java.awt.Color(105, 105, 105));
 		msj_jugador1_pieza.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
 		msj_jugador1_pieza.setBounds(25, 13, 200, 27);
-		msj_jugador1_pieza.setText("X = " + "jugador1");
+		msj_jugador1_pieza.setText("X = " + juego.getJugador1().getNombre());
 		panelDeJuego.add(msj_jugador1_pieza);
 		
 		javax.swing.JLabel msj_jugador2_pieza = new javax.swing.JLabel("O = ");

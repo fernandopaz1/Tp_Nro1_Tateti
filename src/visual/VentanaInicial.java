@@ -51,7 +51,7 @@ public class VentanaInicial {
 		return msjError;
 	}
 	
-
+	
 	public void initialize() {
 			
 			
@@ -97,7 +97,7 @@ public class VentanaInicial {
 								
 								Image img= new ImageIcon(fc.getSelectedFile().toString()).getImage();
 								ImageIcon img2=new ImageIcon(img.getScaledInstance(78, 124, Image.SCALE_SMOOTH));
-
+								newGame.setImagenJugador1(img2);
 								Foto1.setIcon(img2); 
 								
 							}
@@ -119,7 +119,7 @@ public class VentanaInicial {
 								
 								Image img= new ImageIcon(fc.getSelectedFile().toString()).getImage();
 								ImageIcon img2=new ImageIcon(img.getScaledInstance(78, 124, Image.SCALE_SMOOTH));
-
+								newGame.setImagenJugador2(img2);
 								Foto2.setIcon(img2); 
 								
 							}
@@ -128,6 +128,10 @@ public class VentanaInicial {
 			});
 			Boton2.setBounds(335, 150, 89, 23);
 			panelInicial.add(Boton2);
+			
+			
+			
+			
 			
 			javax.swing.JLabel titulo = new javax.swing.JLabel("TA - TE - TORO");
 			titulo.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -171,16 +175,7 @@ public class VentanaInicial {
 			panelInicial.add(boton_jugar);
 			
 			msjError = agregarMsjError("");
-//			msjError.setVisible(true);
-			
-			
-			
-//			javax.swing.JLabel msjError = new javax.swing.JLabel("Error: nombre invalido");
-//			msjError.setForeground(new java.awt.Color(105, 105, 105));
-//			msjError.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
-//			msjError.setBounds(158, 220, 200, 27);
-//			msjError.setVisible(false);
-//			panelInicial.add(msjError);
+
 			
 			
 			
@@ -188,8 +183,7 @@ public class VentanaInicial {
 			boton_jugar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					msjError.setVisible(false);	
-//					msjError = agregarMsjError(" ");
-//					msjError.setVisible(true);
+
 					if(textJugador1.getText().length()>1 && textJugador2.getText().length()>1 &&
 					   textJugador1.getText().length()<6 && textJugador2.getText().length()<6) {
 					
@@ -198,10 +192,9 @@ public class VentanaInicial {
 							newGame.cambiarNombreJugador1(textJugador1.getText());
 							newGame.cambiarNombreJugador2(textJugador2.getText());
 							borrarNombres();
+							borrarFotos();
 							panelDeJuego.setVisible(true);
-//							msjError.setVisible(false);	
-//							msjError = agregarMsjError(":)))");
-//							msjError.setVisible(true);
+
 					}
 						
 					if(textJugador1.getText().length() == 1 || textJugador2.getText().length() == 1 ) {
@@ -230,5 +223,10 @@ public class VentanaInicial {
 	public void borrarNombres() {
 		textJugador1.setText("");
 		textJugador2.setText("");
+	}
+	
+	public void borrarFotos() {
+		Foto1.setIcon(null);
+		Foto2.setIcon(null);
 	}
 }
