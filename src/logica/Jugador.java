@@ -1,11 +1,16 @@
 package logica;
 
+import javax.swing.ImageIcon;
+
 public class Jugador {
 
 	private String nombre;
 	// foto
 	private String pieza;
-
+	private ImageIcon foto1;
+	
+	
+	
 	public Jugador(String nombre, String pieza) {
 		this.nombre = nombre;
 		this.pieza = pieza;
@@ -23,5 +28,13 @@ public class Jugador {
 		nombre = nombre2;
 		
 	}
+	public ImageIcon getImagenJugador() {
+		return foto1;
+	}
+	public void setImagenJugador(ImageIcon imagen) {
+		foto1=imagen;
+	}
+	
+
 
 }

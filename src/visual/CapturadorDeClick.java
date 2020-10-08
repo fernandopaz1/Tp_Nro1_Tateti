@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import logica.Juego;
+import logica.Jugador;
 
 public class CapturadorDeClick implements ActionListener{
 
@@ -35,6 +36,7 @@ public class CapturadorDeClick implements ActionListener{
 					if (ganador != "") {
 						ventanaFinal.setMensaje(ganador);
 						ventanaFinal.mostrarVentana();
+						ventanaFinal.mostrarFotoGanador(juego.jugadorActual().getImagenJugador());
 						ventanaDeJuego.limpiarTablero();
 					}else if(juego.hayEmpate()) {
 						ventanaFinal.setMensaje("Empate");
