@@ -7,15 +7,6 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import logica.Juego;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.awt.event.ActionEvent;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
 
 public class Ventana {
 
@@ -25,12 +16,7 @@ public class Ventana {
 	private VentanaFinal ventanaFinal;
 	private VentanaDeJuego ventanaDeJuego;
 	private JPanel panelDeJuego;
-	private JLabel Foto1;
-	private JLabel Foto2;
-	private JButton Boton1;
-	private JButton Boton2;
-	private final Action action = new SwingAction();
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -79,35 +65,9 @@ public class Ventana {
 
 		ventanaInicial = new VentanaInicial(panelInicial, panelDeJuego, juego);
 
-		ventanaFinal = new VentanaFinal(panelFinal, panelDeJuego, panelInicial, ventanaDeJuego);
+		ventanaFinal = new VentanaFinal(panelFinal, panelDeJuego, panelInicial);
 		panelInicial.setLayout(null);
 
-//		Foto1 = new JLabel("Foto jugador 1");
-//		Foto1.setBounds(361, 44, 63, 48);
-//		panelInicial.add(Foto1);
-//		
-//		Foto2 = new JLabel("Foto jugador 2 ");
-//		Foto2.setBounds(361, 137, 63, 48);
-//		panelInicial.add(Foto2);
-//		
-//		Boton1 = new JButton("New button");
-//		Boton1.setAction(action);
-//		Boton1.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				JFileChooser fc = new JFileChooser();
-//				fc.setDialogTitle("Buscar foto");
-//				
-//				if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION) {
-//					File archivo = new File(fc.getSelectedFile().toString());
-//				}
-//			}
-//		});
-//		Boton1.setBounds(335, 103, 89, 23);
-//		panelInicial.add(Boton1);
-//		
-//		Boton2 = new JButton("New button");
-//		Boton2.setBounds(335, 196, 89, 23);
-//		panelInicial.add(Boton2);
 
 		ventanaDeJuego = new VentanaDeJuego(panelDeJuego, juego, ventanaFinal);
 
@@ -119,13 +79,5 @@ public class Ventana {
 
 	}
 
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
 
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
 }

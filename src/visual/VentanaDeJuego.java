@@ -2,8 +2,6 @@ package visual;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.SystemColor;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 

@@ -10,6 +10,7 @@ public class Juego {
 	Jugador jugador1;
 	Jugador jugador2;
 	String nombre1;
+	Reglas reglas;
 	
 	
 	boolean turno;
@@ -18,6 +19,7 @@ public class Juego {
 	public Juego() {
 	
 		this.tablero = new Tablero();
+		this.reglas=new Reglas(tablero);
 		this.jugador1 = new Jugador("", "X");
 		this.jugador2 = new Jugador("", "O");
 		
@@ -68,7 +70,7 @@ public class Juego {
 	}
 
 	public String hayGanador() {
-		String ganador = tablero.getGanador(jugadorActual());
+		String ganador = reglas.getGanador(jugadorActual());
 		if (!ganador.equals("")) {
 			return "EL GANADOR ES : " + jugadorActual().getNombre() ;
 		}
@@ -77,7 +79,7 @@ public class Juego {
 	}
 	
 	public boolean hayEmpate() {
-		return tablero.hayEmpate(jugador1, jugador2);
+		return reglas.hayEmpate(jugador1, jugador2);
 	}
 	
 	public void tableroNuevo() {

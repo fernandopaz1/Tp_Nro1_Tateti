@@ -10,10 +10,12 @@ public class HayEmpateTest {
 	Tablero tablero;
 	Jugador jugador1;
 	Jugador jugador2;
-
+	Reglas reglas;
+	
 	@Before
 	public void setUp() throws Exception {
 		tablero = new Tablero();
+		reglas=new Reglas(tablero);
 		jugador1 = new Jugador("pepe", "X");
 		jugador2 = new Jugador("pepe2", "O");
 
@@ -29,7 +31,7 @@ public class HayEmpateTest {
 		tablero.agregar(1, 1, jugador2);
 		tablero.agregar(2, 1, jugador1);
 		
-		assertFalse(tablero.hayEmpate(jugador1, jugador2));
+		assertFalse(reglas.hayEmpate(jugador1, jugador2));
 	}
 	
 	@Test
@@ -43,7 +45,7 @@ public class HayEmpateTest {
 		tablero.agregar(2, 1, jugador1);
 		tablero.agregar(2, 1, jugador2);
 		
-		assertTrue(tablero.hayEmpate(jugador1, jugador2));
+		assertTrue(reglas.hayEmpate(jugador1, jugador2));
 	}
 	
 	@Test
@@ -57,7 +59,7 @@ public class HayEmpateTest {
 		tablero.agregar(2, 1, jugador1);
 		tablero.agregar(2, 1, jugador2);
 		
-		assertTrue(tablero.hayEmpate(jugador1, jugador2));
+		assertTrue(reglas.hayEmpate(jugador1, jugador2));
 	}
 	
 	

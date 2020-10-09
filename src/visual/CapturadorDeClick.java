@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import logica.Juego;
-import logica.Jugador;
 
 public class CapturadorDeClick implements ActionListener {
 

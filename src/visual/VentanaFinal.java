@@ -2,7 +2,6 @@ package visual;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 public class VentanaFinal extends ModeloDeVentana {
@@ -19,15 +17,13 @@ public class VentanaFinal extends ModeloDeVentana {
 	private JPanel panelInicial;
 	private JPanel panelFinal;
 	private JPanel panelDeJuego;
-	private VentanaDeJuego ventanaDeJuego;
 	private JLabel fotoGanadora;
 
-	public VentanaFinal(JPanel panelFinal, JPanel panelDeJuego, JPanel panelInicial, VentanaDeJuego ventanaDeJuego) {
+	public VentanaFinal(JPanel panelFinal, JPanel panelDeJuego, JPanel panelInicial) {
 		this.panelInicial = panelInicial;
 		this.panelDeJuego = panelDeJuego;
 		this.panelFinal = panelFinal;
-		this.titulo = new javax.swing.JLabel();
-		this.ventanaDeJuego = ventanaDeJuego;
+		this.titulo = new JLabel();
 	}
 
 	public void initialize() {
