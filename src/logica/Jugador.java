@@ -5,9 +5,8 @@ import javax.swing.ImageIcon;
 public class Jugador {
 
 	private String nombre;
-	// foto
 	private String pieza;
-	private ImageIcon foto1;
+	private ImageIcon foto;
 	
 	
 	
@@ -29,12 +28,11 @@ public class Jugador {
 		
 	}
 	public ImageIcon getImagenJugador() {
-		return foto1;
+		return foto;
 	}
 	public void setImagenJugador(ImageIcon imagen) {
-		foto1=imagen;
+		foto=imagen;
 	}
 	
-
 
 }

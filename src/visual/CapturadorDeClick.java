@@ -27,9 +27,10 @@ public class CapturadorDeClick implements ActionListener {
 	// debido a la clase acctionListener;
 	public void actionPerformed(ActionEvent e) {
 		
-		String text1="X= "+juego.getJugador1().getNombre();
-		String text2="O= "+juego.getJugador2().getNombre();
-		ventanaDeJuego.setJugadorLabel(text1, text2);
+		
+		ventanaDeJuego.refreshJugadorLabel();
+		ventanaDeJuego.refreshTurnoLabel();
+		
 		JButton clicked = (JButton) e.getSource();
 		if (clicked.getText() == "") {
 			clicked.setText(juego.jugadorActual().getPieza());
@@ -37,16 +38,26 @@ public class CapturadorDeClick implements ActionListener {
 			String ganador = juego.hayGanador();
 
 			if (ganador != "") {
+				
 				ventanaFinal.setMensaje(ganador);
 				ventanaFinal.mostrarVentana();
+				
 				ventanaFinal.mostrarFotoGanador(juego.jugadorActual().getImagenJugador());
-				ventanaDeJuego.limpiarTablero();
 				juego.cambiarTurno();
+				juego.resetTurno();
+				
+				ventanaDeJuego.limpiarTablero();
+				ventanaDeJuego.refreshTurnoLabel();
+				
+				
 			} else if (juego.hayEmpate()) {
 				ventanaFinal.setMensaje("Empate");
 				ventanaFinal.mostrarVentana();
-				ventanaDeJuego.limpiarTablero();
 				juego.cambiarTurno();
+				
+
+				ventanaDeJuego.limpiarTablero();
+				ventanaDeJuego.refreshTurnoLabel();
 			}
 		}
 

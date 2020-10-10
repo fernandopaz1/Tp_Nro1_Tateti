@@ -16,6 +16,7 @@ public class VentanaDeJuego extends ModeloDeVentana {
 	private JButton botones[][];
 	private JLabel labelJugador1;
 	private JLabel labelJugador2;
+	private JLabel labelTurno;
 
 	public VentanaDeJuego(JPanel panelDeJuego, Juego juego, VentanaFinal ventanaFinal) {
 		this.panelDeJuego = panelDeJuego;
@@ -37,6 +38,9 @@ public class VentanaDeJuego extends ModeloDeVentana {
 		labelJugador1=createJLabel(panelDeJuego, "X = " + "jugador1", colorJugador, fontJugador, 25, 13, 200,
 				27);
 		labelJugador2=createJLabel(panelDeJuego, "O = " + "jugador2", colorJugador, fontJugador, 300, 13, 200,
+				27);
+		
+		labelTurno=createJLabel(panelDeJuego, "Turno 0", colorJugador, fontJugador, 25, 200, 200,
 				27);
 
 		limpiarTablero();
@@ -81,9 +85,15 @@ public class VentanaDeJuego extends ModeloDeVentana {
 		}
 	}
 	
-	public void setJugadorLabel(String text1, String text2) {
+	public void refreshJugadorLabel() {
+		String text1="X= "+juego.getJugador1().getNombre();
+		String text2="O= "+juego.getJugador2().getNombre();
 		labelJugador1.setText(text1);
 		labelJugador2.setText(text2);
 	}
 
+	public void refreshTurnoLabel() {
+		String turno="Turno " +juego.getNroDeTurno();
+		labelTurno.setText(turno);
+	}
 }

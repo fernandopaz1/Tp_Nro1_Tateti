@@ -4,13 +4,12 @@ import javax.swing.ImageIcon;
 
 public class Juego {
 
-	Tablero tablero;
-	Jugador jugador1;
-	Jugador jugador2;
-	String nombre1;
-	Reglas reglas;
-
-	boolean turno;
+	private Tablero tablero;
+	private Jugador jugador1;
+	private Jugador jugador2;
+	private Reglas reglas;
+	private boolean turno;
+	private int turnoNro;
 
 	public Juego() {
 
@@ -18,8 +17,8 @@ public class Juego {
 		this.reglas = new Reglas(tablero);
 		this.jugador1 = new Jugador("", "X");
 		this.jugador2 = new Jugador("", "O");
-
 		turno = true;
+		turnoNro=0;
 	}
 
 	public Jugador getJugador1() {
@@ -49,20 +48,18 @@ public class Juego {
 
 		if (!tablero.estaOcupado(posicion1, posicion2)) {
 			tablero.agregar(posicion1, posicion2, this.jugadorActual());
+			turnoNro++;
 		}
 	}
 
-	public void cambiarNombreJugador1(String nombre) {
+	public void cambiarNombreJugadores(String nombre1,String nombre2) {
 
-		jugador1.setNombre(nombre);
-
-	}
-
-	public void cambiarNombreJugador2(String nombre) {
-
-		jugador2.setNombre(nombre);
+		jugador1.setNombre(nombre1);
+		jugador2.setNombre(nombre2);
 
 	}
+
+	
 
 	public String hayGanador() {
 		String ganador = reglas.getGanador(jugadorActual());
@@ -91,5 +88,40 @@ public class Juego {
 		jugador2.setImagenJugador(imagen2);
 
 	}
+	
+	
+	public int getNroDeTurno() {
+		return turnoNro;
+	}
+	public void resetTurno() {
+		turnoNro=0;
+	}
+	
+	
 
+	private boolean tienenNombresDistintos() {
+		return !jugador1.getNombre().equals(jugador2.getNombre());
+	}
+
+	private boolean tienenPocasLetras() {
+		return jugador1.getNombre().length() <= 1 || jugador2.getNombre().length() <= 1;
+	}
+	
+	private boolean tienenMuchasLetras() {
+		return jugador1.getNombre().length() > 6 || jugador2.getNombre().length() > 6;
+	}
+	
+	public String sonNombresValidos() {
+		if(tienenPocasLetras()) {
+			return "Todos los nombres deben tener mas de una letra! ";
+		}
+		if(tienenMuchasLetras()) {
+			return "Todos los nombres deben tener menos de 6 letras ! ";
+		}
+		if(!tienenNombresDistintos()) {
+			return "Los nombres deben ser distinos ! ";
+		}
+		return "";
+	}
+	
 }

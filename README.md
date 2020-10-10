@@ -17,7 +17,7 @@
 - [x] Implementar clase Juego
 - [x] Establecer una interface visual
 - [x] Comunicar la interface con el código de negocio
-- [ ] Contar turnos jugado y mostrar este dato en la interfaz. 
+- [x] Contar turnos jugado y mostrar este dato en la interfaz. 
 - [x] Pedir los nombres de los usuarios y mostrarlos en interfaz
 - [x] Deteccion de empates prematura
 

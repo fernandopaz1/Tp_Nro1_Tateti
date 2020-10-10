@@ -23,7 +23,6 @@ public class VentanaInicial extends ModeloDeVentana {
 	private JLabel msjError;
 	private JLabel foto1;
 	private JLabel foto2;
-	
 
 	public VentanaInicial(JPanel panelInicial, JPanel panelDeJuego, Juego newGame) {
 
@@ -31,17 +30,6 @@ public class VentanaInicial extends ModeloDeVentana {
 		this.panelInicial = panelInicial;
 		this.newGame = newGame;
 
-	}
-
-	public JLabel agregarMsjError(String textoDeError) {
-
-		javax.swing.JLabel msjError = new javax.swing.JLabel(textoDeError);
-		msjError.setForeground(new java.awt.Color(105, 105, 105));
-		msjError.setFont(new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16));
-		msjError.setBounds(10, 238, 450, 27);
-		msjError.setVisible(false);
-		panelInicial.add(msjError);
-		return msjError;
 	}
 
 	public void initialize() {
@@ -95,34 +83,32 @@ public class VentanaInicial extends ModeloDeVentana {
 		boton_jugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				msjError.setVisible(false);
+				
+				newGame.cambiarNombreJugadores(textJugador1.getText(),textJugador2.getText());
 
-				if (textJugador1.getText().length() > 1 && textJugador2.getText().length() > 1
-						&& textJugador1.getText().length() < 6 && textJugador2.getText().length() < 6) {
+				String mensajeDeError = newGame.sonNombresValidos();
+				
+				if(!mensajeDeError.equals("")){
+
+					msjError.setVisible(false);
+					msjError.setText(mensajeDeError);
+					msjError.setVisible(true);
+				}
+				else {
 
 					panelInicial.setVisible(false);
 					panelDeJuego.setVisible(true);
-					newGame.cambiarNombreJugador1(textJugador1.getText());
-					newGame.cambiarNombreJugador2(textJugador2.getText());
+
 					borrarNombres();
 					borrarFotos();
+
 					panelDeJuego.setVisible(true);
 
 				}
 
-				if (textJugador1.getText().length() == 1 || textJugador2.getText().length() == 1) {
-					msjError.setVisible(false);
-					msjError = agregarMsjError("Todos los jugadores deben colocar un nombre con mas de una letra! ");
-					msjError.setVisible(true);
-				}
-
-				if (textJugador1.getText().length() > 6 || textJugador2.getText().length() > 6) {
-					msjError.setVisible(false);
-					msjError = agregarMsjError("Todos los jugadores deben tener un nombre con 5 letras o menos ! ");
-					msjError.setVisible(true);
-
-				}
-
+				
 			}
+
 		}
 
 		);
@@ -138,4 +124,15 @@ public class VentanaInicial extends ModeloDeVentana {
 		foto1.setIcon(null);
 		foto2.setIcon(null);
 	}
+
+	public JLabel agregarMsjError(String textoDeError) {
+		Color color = new Color(105, 105, 105);
+		Font font = new Font("Sitka Banner", Font.PLAIN, 16);
+		msjError = createJLabel(panelInicial, textoDeError, color, font, 10, 238, 450, 27);
+		msjError.setVisible(false);
+		panelInicial.add(msjError);
+		return msjError;
+	}
+
+
 }
