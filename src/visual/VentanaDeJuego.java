@@ -3,6 +3,7 @@ package visual;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import logica.Juego;
@@ -13,6 +14,8 @@ public class VentanaDeJuego extends ModeloDeVentana {
 	private Juego juego;
 	private VentanaFinal ventanaFinal;
 	private JButton botones[][];
+	private JLabel labelJugador1;
+	private JLabel labelJugador2;
 
 	public VentanaDeJuego(JPanel panelDeJuego, Juego juego, VentanaFinal ventanaFinal) {
 		this.panelDeJuego = panelDeJuego;
@@ -30,9 +33,10 @@ public class VentanaDeJuego extends ModeloDeVentana {
 
 		Color colorJugador = new java.awt.Color(105, 105, 105);
 		Font fontJugador = new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16);
-		createJLabel(panelDeJuego, "X = " + "jugador1", colorJugador, fontJugador, 25, 13, 200,
+		
+		labelJugador1=createJLabel(panelDeJuego, "X = " + "jugador1", colorJugador, fontJugador, 25, 13, 200,
 				27);
-		createJLabel(panelDeJuego, "O = " + "jugador2", colorJugador, fontJugador, 300, 13, 200,
+		labelJugador2=createJLabel(panelDeJuego, "O = " + "jugador2", colorJugador, fontJugador, 300, 13, 200,
 				27);
 
 		limpiarTablero();
@@ -75,6 +79,11 @@ public class VentanaDeJuego extends ModeloDeVentana {
 				botones[i][j].setText("");
 			}
 		}
+	}
+	
+	public void setJugadorLabel(String text1, String text2) {
+		labelJugador1.setText(text1);
+		labelJugador2.setText(text2);
 	}
 
 }

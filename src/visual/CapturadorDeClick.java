@@ -26,6 +26,10 @@ public class CapturadorDeClick implements ActionListener {
 	// El nombre de este metodo no se puede cambiar
 	// debido a la clase acctionListener;
 	public void actionPerformed(ActionEvent e) {
+		
+		String text1="X= "+juego.getJugador1().getNombre();
+		String text2="O= "+juego.getJugador2().getNombre();
+		ventanaDeJuego.setJugadorLabel(text1, text2);
 		JButton clicked = (JButton) e.getSource();
 		if (clicked.getText() == "") {
 			clicked.setText(juego.jugadorActual().getPieza());
@@ -37,10 +41,12 @@ public class CapturadorDeClick implements ActionListener {
 				ventanaFinal.mostrarVentana();
 				ventanaFinal.mostrarFotoGanador(juego.jugadorActual().getImagenJugador());
 				ventanaDeJuego.limpiarTablero();
+				juego.cambiarTurno();
 			} else if (juego.hayEmpate()) {
 				ventanaFinal.setMensaje("Empate");
 				ventanaFinal.mostrarVentana();
 				ventanaDeJuego.limpiarTablero();
+				juego.cambiarTurno();
 			}
 		}
 
