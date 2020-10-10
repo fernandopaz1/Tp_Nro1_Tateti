@@ -22,8 +22,6 @@ public class ModeloDeVentana {
 	public JLabel createJLabel(JPanel panel, String texto, Color color, Font fuente, int posX, int posY, int ancho,
 			int alto) {
 		JLabel titulo = new JLabel(texto);
-		// titulo.setVerticalAlignment(SwingConstants.BOTTOM);
-		// titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		titulo.setForeground(color);
 		titulo.setFont(fuente);
 		titulo.setBounds(posX, posY, ancho, alto);
@@ -62,7 +60,7 @@ public class ModeloDeVentana {
 	public JLabel crearBotonImagen(JPanel panel ,Juego juego,int posBX, int posBY, int anchoB, int altoB, int posIX, int posIY, int anchoI, int altoI) {
 		JLabel foto = new JLabel("");
 		foto.setBounds(posIX, posIY, anchoI, altoI);
-		foto.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		foto.setBorder(new LineBorder(new Color(240, 230, 140), 2));
 		panel.add(foto);
 		JButton boton = createButton(panel, "Elegir foto", null, null, null, posBX, posBY, anchoB, altoB);
 		

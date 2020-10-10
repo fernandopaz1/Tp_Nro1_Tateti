@@ -2,20 +2,14 @@ package visual;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.LineBorder;
 
 import logica.Juego;
 
@@ -29,8 +23,7 @@ public class VentanaInicial extends ModeloDeVentana {
 	private JLabel msjError;
 	private JLabel foto1;
 	private JLabel foto2;
-	private JButton boton1;
-	private JButton boton2;
+	
 
 	public VentanaInicial(JPanel panelInicial, JPanel panelDeJuego, Juego newGame) {
 
@@ -74,28 +67,22 @@ public class VentanaInicial extends ModeloDeVentana {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-	
 
-		foto1=crearBotonImagen(panelInicial ,newGame,335, 79, 89, 23, 250, 66, 63, 48);
-		foto2=crearBotonImagen(panelInicial ,newGame,335,150, 89, 23,250, 137, 63, 48);
-		
+		foto1 = crearBotonImagen(panelInicial, newGame, 335, 79, 89, 23, 250, 66, 63, 48);
+		foto2 = crearBotonImagen(panelInicial, newGame, 335, 150, 89, 23, 250, 137, 63, 48);
 
 		Color colorTitulo = new Color(255, 69, 0);
 		Font fuenteTitulo = new Font("Showcard Gothic", java.awt.Font.PLAIN, 38);
 		createJLabel(panelInicial, "TA - TE - TORO", colorTitulo, fuenteTitulo, 73, 5, 286, 48);
-
 
 		Color colorJugador = new Color(105, 105, 105);
 		Font fuenteJugador = new Font("Sitka Banner", java.awt.Font.PLAIN, 16);
 		createJLabel(panelInicial, "Jugador 1: ", colorJugador, fuenteJugador, 60, 81, 91, 27);
 		createJLabel(panelInicial, "Jugador 2: ", colorJugador, fuenteJugador, 60, 150, 91, 27);
 
-
 		Color colorTextField = new Color(240, 230, 140);
 		textJugador1 = createTextField(panelInicial, colorTextField, 140, 81, 86, 20);
 		textJugador2 = createTextField(panelInicial, colorTextField, 140, 150, 86, 20);
-
 
 		Color foreGround = new Color(255, 99, 71);
 		Font buttonFont = new Font("Showcard Gothic", java.awt.Font.PLAIN, 16);

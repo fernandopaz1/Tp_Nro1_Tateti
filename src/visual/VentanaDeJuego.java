@@ -30,9 +30,9 @@ public class VentanaDeJuego extends ModeloDeVentana {
 
 		Color colorJugador = new java.awt.Color(105, 105, 105);
 		Font fontJugador = new java.awt.Font("Sitka Banner", java.awt.Font.PLAIN, 16);
-		createJLabel(panelDeJuego, "X = " + juego.getJugador1().getNombre(), colorJugador, fontJugador, 25, 13, 200,
+		createJLabel(panelDeJuego, "X = " + "jugador1", colorJugador, fontJugador, 25, 13, 200,
 				27);
-		createJLabel(panelDeJuego, "O = " + juego.getJugador2().getNombre(), colorJugador, fontJugador, 300, 13, 200,
+		createJLabel(panelDeJuego, "O = " + "jugador2", colorJugador, fontJugador, 300, 13, 200,
 				27);
 
 		limpiarTablero();

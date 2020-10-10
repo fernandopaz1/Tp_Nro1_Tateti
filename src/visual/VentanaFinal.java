@@ -37,7 +37,7 @@ public class VentanaFinal extends ModeloDeVentana {
 		alignJLabel(titulo);
 
 		fotoGanadora = createJLabel(panelFinal, "", null, null, 185, 76, 63, 48);
-		fotoGanadora.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		fotoGanadora.setBorder(new LineBorder(new Color(240, 230, 140), 2));
 
 		Color backgroundBttn = new java.awt.Color(240, 230, 140);
 		Font fontBttn = new java.awt.Font("Showcard Gothic", java.awt.Font.PLAIN, 16);
