@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 import logica.Juego;
 
-public class Ventana {
+public class Main {
 
 	private JFrame frame;
 	private Juego juego = new Juego();
@@ -24,7 +24,7 @@ public class Ventana {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ventana window = new Ventana();
+					Main window = new Main();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class Ventana {
 	/**
 	 * Create the application.
 	 */
-	public Ventana() {
+	public Main() {
 		initialize();
 	}
 

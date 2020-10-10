@@ -74,54 +74,12 @@ public class VentanaInicial extends ModeloDeVentana {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		foto1 = new JLabel("");
-		foto1.setBounds(250, 66, 63, 48);
-		foto1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panelInicial.add(foto1);
-
-		foto2 = new JLabel("");
-		foto2.setBounds(250, 137, 63, 48);
-		foto2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panelInicial.add(foto2);
-
 		
-	    boton1 = createButton(panelInicial, "Elegir foto", null, null, null, 335, 79, 89, 23);
+	
 
-		boton1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JFileChooser fc = new JFileChooser();
-				fc.setDialogTitle("Buscar foto");
-
-				if (fc.showOpenDialog(panelInicial) == JFileChooser.APPROVE_OPTION) {
-
-					Image img = new ImageIcon(fc.getSelectedFile().toString()).getImage();
-					ImageIcon img2 = new ImageIcon(img.getScaledInstance(78, 124, Image.SCALE_SMOOTH));
-					newGame.setImagenJugador1(img2);
-					foto1.setIcon(img2);
-
-				}
-			}
-
-		});
+		foto1=crearBotonImagen(panelInicial ,newGame,335, 79, 89, 23, 250, 66, 63, 48);
+		foto2=crearBotonImagen(panelInicial ,newGame,335,150, 89, 23,250, 137, 63, 48);
 		
-		boton2 = createButton(panelInicial, "Elegir foto", null, null, null, 335, 150, 89, 23);
-		
-		boton2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JFileChooser fc = new JFileChooser();
-				fc.setDialogTitle("Buscar foto");
-
-				if (fc.showOpenDialog(panelInicial) == JFileChooser.APPROVE_OPTION) {
-
-					Image img = new ImageIcon(fc.getSelectedFile().toString()).getImage();
-					ImageIcon img2 = new ImageIcon(img.getScaledInstance(78, 124, Image.SCALE_SMOOTH));
-					newGame.setImagenJugador2(img2);
-					foto2.setIcon(img2);
-
-				}
-
-			}
-		});
 
 		Color colorTitulo = new Color(255, 69, 0);
 		Font fuenteTitulo = new Font("Showcard Gothic", java.awt.Font.PLAIN, 38);
@@ -142,7 +100,6 @@ public class VentanaInicial extends ModeloDeVentana {
 		Color foreGround = new Color(255, 99, 71);
 		Font buttonFont = new Font("Showcard Gothic", java.awt.Font.PLAIN, 16);
 		Color background = new Color(240, 230, 140);
-
 		JButton boton_jugar = createButton(panelInicial, "\u00A1JUGAR!", foreGround, buttonFont, background, 158, 190,
 				118, 48);
 

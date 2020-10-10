@@ -38,13 +38,6 @@ public class VentanaDeJuego extends ModeloDeVentana {
 		limpiarTablero();
 	}
 
-//	public JButton crearBoton(int x, int y) {
-//		JButton boton = new JButton("");
-//		boton.setBounds(x, y, 60, 60);
-//		panelDeJuego.add(boton);
-//
-//		return boton;
-//	}
 
 	public void matrizBotones() {
 		panelDeJuego.setLayout(null);

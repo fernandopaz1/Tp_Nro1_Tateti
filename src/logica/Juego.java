@@ -60,7 +60,7 @@ public class Juego {
 	public void cambiarNombreJugador1 (String nombre) {
 		
 	  jugador1.setNombre(nombre);
-	  System.out.println(jugador1.getNombre());
+//	  cambiarTurno();
 	}
 	
 	public void cambiarNombreJugador2 (String nombre) {
@@ -86,8 +86,9 @@ public class Juego {
 		tablero.vaciar();
 	}
 	
-	public void setImagenJugador1(ImageIcon imagen1) {
-		jugador1.setImagenJugador(imagen1);
+	public void setImagenJugador(ImageIcon imagen) {
+		jugadorActual().setImagenJugador(imagen);
+		cambiarTurno();
 		
 	}
 	
