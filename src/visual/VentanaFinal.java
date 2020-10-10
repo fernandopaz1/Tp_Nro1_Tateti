@@ -64,12 +64,11 @@ public class VentanaFinal extends ModeloDeVentana {
 	}
 
 	public void setMensaje(String mensaje) {
-		System.out.println("El contenido del titulo es: " + titulo.getText());
 		titulo.setText(mensaje);
 	}
 
 	public void getTitulo() {
-		System.out.println(titulo.getText());
+	
 	}
 
 	public void mostrarVentana() {

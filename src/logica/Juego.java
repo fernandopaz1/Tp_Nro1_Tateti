@@ -60,13 +60,13 @@ public class Juego {
 	public void cambiarNombreJugador1 (String nombre) {
 		
 	  jugador1.setNombre(nombre);
-//	  cambiarTurno();
+
 	}
 	
 	public void cambiarNombreJugador2 (String nombre) {
 
 		  jugador2.setNombre(nombre);
-		  System.out.println (jugador2.getNombre());
+		  
 	}
 
 	public String hayGanador() {
