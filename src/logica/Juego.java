@@ -18,7 +18,7 @@ public class Juego {
 		this.jugador1 = new Jugador("", "X");
 		this.jugador2 = new Jugador("", "O");
 		turno = true;
-		turnoNro=0;
+		turnoNro=1;
 	}
 
 	public Jugador getJugador1() {
