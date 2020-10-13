@@ -39,22 +39,6 @@ public class VentanaInicial extends ModeloDeVentana {
 		panelInicial.setBounds(0, 0, 434, 261);
 		panelInicial.setLayout(null);
 
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Esto lo q hace es darle una vista de
-																					// tipo windows
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (InstantiationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IllegalAccessException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (UnsupportedLookAndFeelException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 
 		foto1 = crearBotonImagen(panelInicial, newGame, 335, 79, 89, 23, 250, 66, 63, 48);
 		foto2 = crearBotonImagen(panelInicial, newGame, 335, 150, 89, 23, 250, 137, 63, 48);
