@@ -47,7 +47,7 @@ public class CapturadorDeClick implements ActionListener {
 				juego.resetTurno();
 				
 				ventanaDeJuego.limpiarTablero();
-				ventanaDeJuego.refreshTurnoLabel();
+				ventanaDeJuego.refreshTurnoLabel();	
 				
 				
 			} else if (juego.hayEmpate()) {

@@ -90,14 +90,13 @@ public class VentanaInicial extends ModeloDeVentana {
 				
 				if(!mensajeDeError.equals("")){
 
-					msjError.setVisible(false);
 					msjError.setText(mensajeDeError);
 					msjError.setVisible(true);
 				}
 				else {
 
 					panelInicial.setVisible(false);
-					panelDeJuego.setVisible(true);
+					 
 
 					borrarNombres();
 					borrarFotos();
