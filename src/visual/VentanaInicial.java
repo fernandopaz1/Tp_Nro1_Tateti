@@ -82,6 +82,7 @@ public class VentanaInicial extends ModeloDeVentana {
 
 		boton_jugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				msjError.setVisible(false);
 				
 				newGame.cambiarNombreJugadores(textJugador1.getText(),textJugador2.getText());

@@ -34,22 +34,9 @@ public class HayEmpateTest {
 		assertFalse(reglas.hayEmpate(jugador1, jugador2));
 	}
 	
-	@Test
-	public void testHayEmpate() {
-		tablero.agregar(0, 0, jugador1);
-		tablero.agregar(0, 2, jugador2);
-		tablero.agregar(0, 1, jugador1);
-		tablero.agregar(1, 0, jugador2);
-		tablero.agregar(1, 2, jugador1);
-		tablero.agregar(1, 1, jugador2);
-		tablero.agregar(2, 1, jugador1);
-		tablero.agregar(2, 1, jugador2);
-		
-		assertTrue(reglas.hayEmpate(jugador1, jugador2));
-	}
 	
 	@Test
-	public void testHayEmpateTiro() {
+	public void testNoHayEmpateToro() {
 		tablero.agregar(0, 0, jugador1);
 		tablero.agregar(0, 2, jugador2);
 		tablero.agregar(0, 1, jugador1);
@@ -58,8 +45,10 @@ public class HayEmpateTest {
 		tablero.agregar(1, 1, jugador2);
 		tablero.agregar(2, 1, jugador1);
 		tablero.agregar(2, 1, jugador2);
+		tablero.agregar(2, 2, jugador1);
 		
-		assertTrue(reglas.hayEmpate(jugador1, jugador2));
+		assertFalse(reglas.hayEmpate(jugador1, jugador2));
+
 	}
 	
 	
