@@ -6,7 +6,7 @@
 
 > Este repositorio contiene nuestra solución al trabajo practico [Ta-Te-Ti](https://drive.google.com/file/d/1Ek8s1v4pN6Ab6psw-5kJSV_FKp-pnvM7/view?usp=sharing) 
 
-> El informe correspondiente se puede ver haciendo click en el [enlace](https://es.overleaf.com/read/kwbhvcffdybt)
+> El informe correspondiente se puede ver haciendo click en el [enlace](https://drive.google.com/file/d/1sCE9_BUtjz-bjMGa1fF1hqCvL8wfUqo0/view?usp=sharing)
  
  ### Tareas
 
